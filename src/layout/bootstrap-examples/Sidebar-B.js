@@ -1,6 +1,6 @@
 import "./style.scss";
 
-export default function Sidebar() {
+export default function SidebarB() {
   return (
     <div className="sidebar ">
       <div className="row">

@@ -1,29 +1,24 @@
-// import { useState } from "react";
-import Sidebar from "./layout/Sidebar";
-// import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Sidebar from "./layout/sidebar/Sidebar";
+import Navbar from "./layout/navbar/Navbar";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Ecommerce from "./pages/ecommerce/Ecommerce";
+import Private from "./pages/private/Private";
 
 export default function App() {
-  // const [toggle, setToggle] = useState(true);
-  // const handleToggle = () => {
-  //   setToggle(!toggle);
-  // };
-
   return (
-    // <div className="container-fluid bg-secondary min-vh-100">
-    //   <div className="row">
-    //     {toggle && (
-    //       <div className="col-4 col-md-2 bg-white vh-100 position-fixed">
-    //         <Sidebar />
-    //       </div>
-    //     )}
-    //     {toggle && <div className="col-4 col-md-2"></div>}
-    //     <div className="col">
-    //       <Home handleToggle={handleToggle} />
-    //     </div>
-    //   </div>
-    // </div>
-    <div>
-      <Sidebar/>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Sidebar />
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route path="/private" element={<Private />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
