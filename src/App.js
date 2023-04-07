@@ -4,6 +4,7 @@ import Navbar from "./layout/navbar/Navbar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
 import Private from "./pages/private/Private";
+import "./style.css";
 
 export default function App() {
   return (
