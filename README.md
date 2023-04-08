@@ -1,7 +1,7 @@
 
 ## Admin panel
 [www.admin.zaursharifov.com](https://admin.zaursharifov.com)\
-[www.api-admin.zaursharifov.com](https://api-admin-zera.zaursharifov.com)
+[www.api-admin.zaursharifov.com](https://api-admin.zaursharifov.com)
 ## Launc application
 ```bash
   git clone https://github.com/zeraphosa/admin-zeraphosa.git
@@ -30,7 +30,6 @@
 
 ## Todo List
 - [x] Sidebar
-- [ ] Navbar
 - [ ] Dashboard (Home) - task list, todo list, graphics, last incomings, last customer notifications, sales
 - [ ] Ecommerce - Sales, Customers, Products
 - [ ] Private - Todo, Data, Projects
