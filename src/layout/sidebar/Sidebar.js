@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Icon } from "../../components/Icons";
 import "./style.css";
 
@@ -16,10 +16,10 @@ export default function Sidebar({ sideToggle }) {
             </Link>
           </div>
           {pages.map((item, id) => (
-            <Link key={id} to={item.t} className={`item-link active ${sideToggle && "item-link-mob"}`}>
+            <NavLink key={id} to={item.t} className={`item-link ${sideToggle && "item-link-mob"}`}>
               <Icon name={item.i} size={20} />
               <span className={`link-text ${sideToggle && "d-none"}`}>{item.n}</span>
-            </Link>
+            </NavLink>
           ))}
         </div>
         <div className="settings">

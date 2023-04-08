@@ -16,25 +16,21 @@
 ## Color Reference
 | Hex | | Used for |
 | --- | - | --- |
-| #171717 | ![#171717](https://via.placeholder.com/10/171717?text=+)| background |
 | #1f1e21 | ![#1f1e21](https://via.placeholder.com/10/1f1e21?text=+)| hover |
-| #ffffff | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+)| hover |
-| #ededed | ![#ededed](https://via.placeholder.com/10/ededed?text=+)| text  |
-| #da0037 | ![#da0037](https://via.placeholder.com/10/da0037?text=+)| red  |
 | #272529 | ![#272529](https://via.placeholder.com/10/272529?text=+)| table odd  |
 | #2e2e2e | ![#2e2e2e](https://via.placeholder.com/10/2e2e2e?text=+)| scrollbar  |
 | #5f8d4e | ![#5f8d4e](https://via.placeholder.com/10/5f8d4e?text=+)| green  |
---------
+
 | #171717 | ![#171717](https://via.placeholder.com/10/171717?text=+)| black  |
 | #2D3446 | ![#2D3446](https://via.placeholder.com/10/2D3446?text=+)| logo   |
 | #1F2431 | ![#1F2431](https://via.placeholder.com/10/1F2431?text=+)| blue   |
 | #EDEDED | ![#EDEDED](https://via.placeholder.com/10/EDEDED?text=+)| text   |
-| #EDEDED | ![#EDEDED](https://via.placeholder.com/10/EDEDED?text=+)| text-2 |
+| #788195 | ![#788195](https://via.placeholder.com/10/788195?text=+)| text-2 |
 | #DA0037 | ![#DA0037](https://via.placeholder.com/10/DA0037?text=+)| red    |
 
 
 ## Todo List
-- [ ] Sidebar
+- [ X ] Sidebar
 - [ ] Navbar
 - [ ] Dashboard (Home) - task list, todo list, graphics, last incomings, last customer notifications, sales
 - [ ] Ecommerce - Sales, Customers, Products
