@@ -28,7 +28,16 @@ export default function Sidebar({ sideToggle }) {
             <span className={`link-text ${sideToggle && "d-none"}`}>Data</span>
           </a>
         </div>
-        <div className="shapes">shapes</div>
+        <div className="settings">
+          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
+            <Icon name="settings" size={22} />
+            <span className={`link-text ${sideToggle && "d-none"}`}>Settings</span>
+          </a>
+          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
+            <Icon name="user" size={22} />
+            <span className={`link-text ${sideToggle && "d-none"}`}>Profile</span>
+          </a>
+        </div>
       </div>
     </div>
   );
