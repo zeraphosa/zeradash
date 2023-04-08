@@ -1,7 +1,7 @@
 
 ## Admin panel
 [www.admin.zaursharifov.com](https://admin.zaursharifov.com)\
-[www.api-admin.zaursharifov.com](https://api-admin-zera.zaursharifov.com)
+[www.api-admin.zaursharifov.com](https://api-admin.zaursharifov.com)
 ## Launc application
 ```bash
   git clone https://github.com/zeraphosa/admin-zeraphosa.git
