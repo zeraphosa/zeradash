@@ -1,5 +1,3 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = {
   profile: false,
   settings: false,
@@ -16,15 +14,3 @@ const modal = (state = initialState, action) => {
   }
 };
 export default modal;
-
-// const modal = createSlice({
-//     name: "modal",
-//     initialState,
-//     reducers: {
-//       showProfile: (state) => {
-//         state.modal = !state.modal;
-//       },
-//     },
-//   });
-// export const { showProfile } = modal.actions;
-// export default modal.reducer;

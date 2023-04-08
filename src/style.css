@@ -30,14 +30,3 @@ body {
   border: none;
   cursor: pointer;
 }
-
-.modal {
-  width: 400px;
-  height: 500px;
-  border: 1px solid red;
-  z-index: 2;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}

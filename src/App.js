@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Icon } from "./components/Icons";
+import SettingsModal from "./components/modals/SettingsModal";
+import ProfileModal from "./components/modals/ProfileModal";
 import Sidebar from "./layout/sidebar/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
 import Projects from "./pages/projects/Projects";
 import Data from "./pages/data/Data";
 import "./style.css";
-import { useSelector } from "react-redux";
-import ProfileModal from "./components/ProfileModal";
-import SettingsModal from "./components/SettingsModal";
 
 export default function App() {
   const [sideToggle, setSideToggle] = useState(false);

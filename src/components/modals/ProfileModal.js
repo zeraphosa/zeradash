@@ -1,5 +1,5 @@
 export default function ProfileModal(){
     return(
-        <div className="modal">Profile</div>
+        <div className="a">Profile</div>
     )
 }
