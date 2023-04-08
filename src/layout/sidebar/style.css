@@ -34,7 +34,10 @@
   background-color: #1f2431;
   margin-bottom: 40px;
 }
-
+.brand-letter{
+  color: #ffffff;
+  text-decoration: none;
+}
 .brand-text {
   color: #ededed;
   text-decoration: none;

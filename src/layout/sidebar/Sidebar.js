@@ -1,32 +1,26 @@
+import { Link } from "react-router-dom";
 import { Icon } from "../../components/Icons";
 import "./style.css";
+
 export default function Sidebar({ sideToggle }) {
   return (
     <div className={`sidebar ${sideToggle && "side-mob"}`}>
       <div className="sidebar-inner">
         <div className="items">
           <div className="brand">
-            <h1 className={`brand-letter ${!sideToggle && "d-none"}`}>Z</h1>
-            <a href="/" className={sideToggle ? "d-none" : "brand-text"}>
+            <Link to="/">
+              <h1 className={`brand-letter ${!sideToggle && "d-none"}`}>Z</h1>
+            </Link>
+            <Link to="/" className={sideToggle ? "d-none" : "brand-text"}>
               <h1>ZERA</h1>
-            </a>
+            </Link>
           </div>
-          <a href="/" className={`item-link active ${sideToggle && "item-link-mob"}`}>
-            <Icon name="dashboard" size={20} />
-            <span className={`link-text ${sideToggle && "d-none"}`}>Dashboard</span>
-          </a>
-          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
-            <Icon name="ecommerce" size={20} />
-            <span className={`link-text ${sideToggle && "d-none"}`}>Ecommerce</span>
-          </a>
-          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
-            <Icon name="projects" size={20} />
-            <span className={`link-text ${sideToggle && "d-none"}`}>Projects</span>
-          </a>
-          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
-            <Icon name="data" size={20} />
-            <span className={`link-text ${sideToggle && "d-none"}`}>Data</span>
-          </a>
+          {pages.map((item, id) => (
+            <Link key={id} to={item.t} className={`item-link active ${sideToggle && "item-link-mob"}`}>
+              <Icon name={item.i} size={20} />
+              <span className={`link-text ${sideToggle && "d-none"}`}>{item.n}</span>
+            </Link>
+          ))}
         </div>
         <div className="settings">
           <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
@@ -42,3 +36,10 @@ export default function Sidebar({ sideToggle }) {
     </div>
   );
 }
+
+const pages = [
+  { n: "Dashboard", t: "/", i: "dashboard" },
+  { n: "Ecommerce", t: "/ecommerce", i: "ecommerce" },
+  { n: "Projects", t: "/projects", i: "projects" },
+  { n: "Data", t: "/data", i: "data" },
+];
