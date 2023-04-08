@@ -20,7 +20,6 @@
 | #272529 | ![#272529](https://via.placeholder.com/10/272529?text=+)| table odd  |
 | #2e2e2e | ![#2e2e2e](https://via.placeholder.com/10/2e2e2e?text=+)| scrollbar  |
 | #5f8d4e | ![#5f8d4e](https://via.placeholder.com/10/5f8d4e?text=+)| green  |
-
 | #171717 | ![#171717](https://via.placeholder.com/10/171717?text=+)| black  |
 | #2D3446 | ![#2D3446](https://via.placeholder.com/10/2D3446?text=+)| logo   |
 | #1F2431 | ![#1F2431](https://via.placeholder.com/10/1F2431?text=+)| blue   |
@@ -30,7 +29,7 @@
 
 
 ## Todo List
-- [ X ] Sidebar
+- [x] Sidebar
 - [ ] Navbar
 - [ ] Dashboard (Home) - task list, todo list, graphics, last incomings, last customer notifications, sales
 - [ ] Ecommerce - Sales, Customers, Products
