@@ -1,3 +1,4 @@
+import { Icon } from "../../components/Icons";
 import "./style.css";
 export default function Sidebar() {
   return (
@@ -11,16 +12,20 @@ export default function Sidebar() {
             </a>
           </div>
           <a href="/" className="item-link">
-            <span>D</span>
+            <Icon name="dashboard" size={20} />
             <span>Dashboard</span>
           </a>
           <a href="/" className="item-link">
-            <span>E</span>
-            <span>E Commerce</span>
+            <Icon name="ecommerce" size={20} />
+            <span>Ecommerce</span>
           </a>
           <a href="/" className="item-link">
-            <span>P</span>
-            <span>Private</span>
+            <Icon name="projects" size={20} />
+            <span>Projects</span>
+          </a>
+          <a href="/" className="item-link">
+            <Icon name="data" size={20} />
+            <span>Data</span>
           </a>
         </div>
         <div className="shapes">shapes</div>

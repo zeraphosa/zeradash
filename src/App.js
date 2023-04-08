@@ -3,7 +3,8 @@ import Sidebar from "./layout/sidebar/Sidebar";
 import Navbar from "./layout/navbar/Navbar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
-import Private from "./pages/private/Private";
+import Projects from "./pages/projects/Projects";
+import Data from "./pages/data/Data";
 import "./style.css";
 
 export default function App() {
@@ -16,7 +17,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
-            <Route path="/private" element={<Private />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/data" element={<Data />} />
           </Routes>
         </div>
       </div>
