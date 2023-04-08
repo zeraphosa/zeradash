@@ -43,7 +43,7 @@
   text-decoration: none;
 }
 .item-link {
-  width: 96%;
+  width: 95%;
   color: #788195;
   text-decoration: none;
   padding: 6px 0;
@@ -52,6 +52,9 @@
   align-items: center;
   font-size: 18px;
   gap: 20px;
+  border: none;
+  background-color: #2d3446;
+  cursor: pointer;
 }
 .item-link-mob {
   width: 80%;

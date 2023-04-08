@@ -30,7 +30,6 @@
 
 ## Todo List
 - [x] Sidebar
-- [ ] Navbar
 - [ ] Dashboard (Home) - task list, todo list, graphics, last incomings, last customer notifications, sales
 - [ ] Ecommerce - Sales, Customers, Products
 - [ ] Private - Todo, Data, Projects

@@ -7,10 +7,15 @@ import Ecommerce from "./pages/ecommerce/Ecommerce";
 import Projects from "./pages/projects/Projects";
 import Data from "./pages/data/Data";
 import "./style.css";
+import { useSelector } from "react-redux";
+import ProfileModal from "./components/ProfileModal";
+import SettingsModal from "./components/SettingsModal";
 
 export default function App() {
   const [sideToggle, setSideToggle] = useState(false);
- 
+  const profile = useSelector((state) => state.modal.profile);
+  const settings = useSelector((state) => state.modal.settings);
+
   return (
     <BrowserRouter>
       <div className="app">
@@ -26,6 +31,8 @@ export default function App() {
             <Route path="/data" element={<Data />} />
           </Routes>
         </div>
+        {profile && <ProfileModal />}
+        {settings && <SettingsModal />}
       </div>
     </BrowserRouter>
   );

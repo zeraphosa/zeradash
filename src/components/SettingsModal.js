@@ -1,5 +1,5 @@
 export default function SettingsModal(){
     return(
-        <div>Settings</div>
+        <div className="modal">Settings</div>
     )
 }

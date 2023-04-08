@@ -1,8 +1,13 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { Icon } from "../../components/Icons";
 import "./style.css";
 
 export default function Sidebar({ sideToggle }) {
+  const dispatch = useDispatch();
+  const profile = useSelector((state) => state.modal.profile);
+  const settings = useSelector((state) => state.modal.settings);
+
   return (
     <div className={`sidebar ${sideToggle && "side-mob"}`}>
       <div className="sidebar-inner">
@@ -23,14 +28,14 @@ export default function Sidebar({ sideToggle }) {
           ))}
         </div>
         <div className="settings">
-          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
+          <button className={`item-link ${settings && "active"} ${sideToggle && "item-link-mob"}`} onClick={() => dispatch({ type: "setSettings" })}>
             <Icon name="settings" size={22} />
             <span className={`link-text ${sideToggle && "d-none"}`}>Settings</span>
-          </a>
-          <a href="/" className={`item-link ${sideToggle && "item-link-mob"}`}>
+          </button>
+          <button className={`item-link ${profile && "active"} ${sideToggle && "item-link-mob"}`} onClick={() => dispatch({ type: "setProfile" })}>
             <Icon name="user" size={22} />
             <span className={`link-text ${sideToggle && "d-none"}`}>Profile</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>
