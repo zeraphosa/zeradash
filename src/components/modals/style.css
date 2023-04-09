@@ -5,11 +5,12 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 .modal-inner {
   z-index: 2;
   width: 400px;
-  height: 350px;
+  height: 400px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -19,11 +20,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 50px;
+  gap: 20px;
   align-items: center;
 }
 .modal-header {
   width: 90%;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,6 +76,46 @@ select {
 option {
   background-color: #2d3446;
 }
+.profile{
+  display: flex;
+  justify-content: center;
+}
+.profile-item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.form-item{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+input{
+  outline: none;
+  display: block;
+  background-color: #ededed;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  color: #171717;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+}
+label{
+  display: block;
+  color: #95a0b8;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
 
 @media (max-width: 768px) {
   .modal-inner{
@@ -85,5 +127,10 @@ option {
   }
   select{
     margin-top: 5px;
+  }
+}
+@media(max-width: 500px){
+  .modal-inner{
+    width: 90%;
   }
 }
