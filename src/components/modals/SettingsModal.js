@@ -1,13 +1,17 @@
+import { useDispatch } from "react-redux";
 import { Icon } from "../Icons";
 import "./style.css";
 
 export default function SettingsModal() {
+  const dispatch = useDispatch();
+
   return (
-    <div className="modal">
+    <>
+      <div className="modal" onClick={() => dispatch({ type: "setSettings" })}></div>
       <div className="modal-inner">
         <div className="modal-header">
           <h2>Settings</h2>
-          <button className="close-btn">
+          <button className="close-btn" onClick={() => dispatch({ type: "setSettings" })}>
             <Icon name="close" size={25} />
           </button>
         </div>
@@ -39,6 +43,6 @@ export default function SettingsModal() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
