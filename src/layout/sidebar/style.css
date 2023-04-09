@@ -35,7 +35,7 @@
   margin-bottom: 40px;
 }
 .brand-letter{
-  color: #ffffff;
+  color: #ededed;
   text-decoration: none;
 }
 .brand-text {
@@ -44,7 +44,7 @@
 }
 .item-link {
   width: 95%;
-  color: #788195;
+  color: #95a0b8;
   text-decoration: none;
   padding: 6px 0;
   padding-left: 10px;
@@ -65,6 +65,7 @@
 }
 .item-link.active {
   background-color: #1f2431;
+  color: #ededed;
 }
 .settings {
   width: 100%;

@@ -24,12 +24,13 @@
 | #2D3446 | ![#2D3446](https://via.placeholder.com/10/2D3446?text=+)| logo   |
 | #1F2431 | ![#1F2431](https://via.placeholder.com/10/1F2431?text=+)| blue   |
 | #EDEDED | ![#EDEDED](https://via.placeholder.com/10/EDEDED?text=+)| text   |
-| #788195 | ![#788195](https://via.placeholder.com/10/788195?text=+)| text-2 |
+| #95a0b8 | ![#95a0b8](https://via.placeholder.com/10/95a0b8?text=+)| text-2 |
 | #DA0037 | ![#DA0037](https://via.placeholder.com/10/DA0037?text=+)| red    |
 
 
 ## Todo List
 - [x] Sidebar
+- [ ] Modals
 - [ ] Dashboard (Home) - task list, todo list, graphics, last incomings, last customer notifications, sales
 - [ ] Ecommerce - Sales, Customers, Products
 - [ ] Private - Todo, Data, Projects

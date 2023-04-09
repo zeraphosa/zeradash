@@ -117,6 +117,14 @@ function SettingsIcon({ size }) {
   );
 }
 
+function CloseIcon({ size }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 const Icon = ({ name, size }) => {
   const icons = {
     dashboard: DashboardIcon,
@@ -127,6 +135,7 @@ const Icon = ({ name, size }) => {
     flagUsa: FlagUsaIcon,
     user: UserIcon,
     settings: SettingsIcon,
+    close: CloseIcon,
   };
   const Component = icons[name];
   return <Component size={size} />;
