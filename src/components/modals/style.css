@@ -116,6 +116,17 @@ label{
   text-transform: uppercase;
   letter-spacing: .2em;
 }
+.show{
+  float: right;
+  margin-right: 20px;
+  margin-top: -30px;
+  position: relative;
+  color: #171717;
+  cursor: pointer;
+}
+input[type="submit"]{
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
   .modal-inner{

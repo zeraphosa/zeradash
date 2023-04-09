@@ -1,9 +1,11 @@
 import { useDispatch } from "react-redux";
 import { Icon } from "../Icons";
 import "./style.css";
+import { useState } from "react";
 
 export default function ProfileModal() {
   const dispatch = useDispatch();
+  const [showPass, setShowPass] = useState(false);
 
   return (
     <>
@@ -28,7 +30,13 @@ export default function ProfileModal() {
               </div>
               <div className="form-item">
                 <label>Your Password</label>
-                <input type="password" placeholder="password1234" value="password1234" />
+                <div className="password-item">
+                  <input type={showPass ? "password" : "text" } placeholder="password1234" value="password1234" />
+                  <div className="show" onClick={() => setShowPass(!showPass)}>
+                    {showPass && <Icon name="eyeOn" size={20}/>}
+                    {showPass || <Icon name="eyeOff" size={20}/>}
+                  </div>
+                </div>
               </div>
               <input type="submit" placeholder="Update" value="UPDATE" />
             </form>
