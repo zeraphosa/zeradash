@@ -8,7 +8,7 @@ import Sidebar from "./layout/sidebar/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
 import Projects from "./pages/projects/Projects";
-import Data from "./pages/data/Data";
+import Notes from "./pages/notes/Notes";
 import "./style.css";
 
 export default function App() {
@@ -24,12 +24,14 @@ export default function App() {
           <button className="nav" onClick={() => setSideToggle(!sideToggle)}>
             <Icon name="menu" size={35} />
           </button>
+          <div className="container">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/data" element={<Data />} />
+            <Route path="/notes" element={<Notes />} />
           </Routes>
+          </div>
         </div>
         {profile && <ProfileModal />}
         {settings && <SettingsModal />}

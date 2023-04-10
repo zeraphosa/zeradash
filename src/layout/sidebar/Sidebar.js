@@ -18,22 +18,26 @@ export default function Sidebar({ sideToggle }) {
               <h1>ZERA</h1>
             </Link>
           </div>
-          {pages.map((item, id) => (
-            <NavLink key={id} to={item.t} className={`item-link ${sideToggle && "item-link-mob"}`}>
-              <Icon name={item.i} size={20} />
-              <span className={`link-text ${sideToggle && "d-none"}`}>{item.n}</span>
-            </NavLink>
-          ))}
+          <>
+            {pages.map((item, id) => (
+              <NavLink key={id} to={item.t} className={`item-link ${sideToggle && "item-link-mob"}`}>
+                <Icon name={item.i} size={20} />
+                <span className={`link-text ${sideToggle && "d-none"}`}>{item.n}</span>
+              </NavLink>
+            ))}
+            <Link className={`item-link ${sideToggle && "item-link-mob"}`} onClick={() => dispatch({ type: "setSettings" })}>
+              <Icon name="settings" size={20} />
+              <span className={`link-text ${sideToggle && "d-none"}`}>Settings</span>
+            </Link>
+            <Link className={`item-link ${sideToggle && "item-link-mob"}`} onClick={() => dispatch({ type: "setProfile" })}>
+              <Icon name="user" size={20} />
+              <span className={`link-text ${sideToggle && "d-none"}`}>Profile</span>
+            </Link>
+          </>
         </div>
-        <div className="settings">
-          <button className={`item-link ${sideToggle && "item-link-mob"}`} onClick={() => dispatch({ type: "setSettings" })}>
-            <Icon name="settings" size={22} />
-            <span className={`link-text ${sideToggle && "d-none"}`}>Settings</span>
-          </button>
-          <button className={`item-link ${sideToggle && "item-link-mob"}`} onClick={() => dispatch({ type: "setProfile" })}>
-            <Icon name="user" size={22} />
-            <span className={`link-text ${sideToggle && "d-none"}`}>Profile</span>
-          </button>
+        <div className="info">
+          <span>Baku, 16C</span>
+          <span>12:23</span>
         </div>
       </div>
     </div>
@@ -44,5 +48,5 @@ const pages = [
   { n: "Dashboard", t: "/", i: "dashboard" },
   { n: "Ecommerce", t: "/ecommerce", i: "ecommerce" },
   { n: "Projects", t: "/projects", i: "projects" },
-  { n: "Data", t: "/data", i: "data" },
+  { n: "Notes", t: "/notes", i: "notes" },
 ];
