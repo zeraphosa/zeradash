@@ -1,3 +1,7 @@
+import "./style.css";
+
 export default function Ecommerce() {
-  return <div>ecommerce</div>;
+  return <div className="ecommerce">
+    <div className="inner">ecommerce</div>
+  </div>;
 }

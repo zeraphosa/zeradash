@@ -1,42 +1,62 @@
 .notes {
   width: 100%;
-  height: auto;
-  background-color: #1e293b;
-  border-radius: 20px;
+  height: 90vh;
   margin-bottom: 20px;
-}
-.notes-inner {
-  width: 95%;
-  height: 95%;
-  display: flex;
-  flex-direction: row;
-  padding: 10px 0px;
-  margin: auto;
 }
 .note-nav {
   width: 30%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  float: left;
 }
 .note-content {
   width: 70%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  float: right;
+}
+.search {
+  width: 100%;
+  height: 50px;
 }
 .note-header {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
   overflow: auto;
+}
+.add {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.note-text {
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+.search input {
+  outline: none;
+  display: block;
+  background-color: transparent;
+  width: 100%;
+  height: 50px;
+  border-radius: 0px;
+  padding-left: 5px;
+  border-bottom: 1px solid #979aa2;
+  color: #ededed;
+}
+.search input::-webkit-input-placeholder {
+  color: #ededed;
+}
+.search input::-moz-placeholder {
+  color: #ededed;
 }
 .header-item {
   width: 100%;
   height: 65px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .item-text {
   border-bottom: 1px solid #979aa2;
@@ -55,28 +75,6 @@
 .close-btn {
   width: 10%;
 }
-
-
-.note-text {
-  width: 95%;
-  height: 100%;
-  overflow: auto;
-  margin: 0 auto;
-}
-.search {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-.add {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border: 1px solid green;
-}
 .add button {
   border: none;
   padding: 7px 15px;
@@ -88,23 +86,12 @@
   letter-spacing: 0.5px;
   cursor: pointer;
 }
-.search input {
-  outline: none;
-  display: block;
-  background-color: transparent;
-  width: 60%;
-  height: 30px;
-  border-radius: 0px;
-  padding-left: 5px;
-  border-bottom: 1px solid #979aa2;
+.note-text{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
-.search input::-webkit-input-placeholder {
-  color: #ededed;
-}
-.search input::-moz-placeholder {
-  color: #ededed;
-}
-
 textarea{
   width: 95%;
   height: 500px;
@@ -113,34 +100,20 @@ textarea{
   border: none;
   background-color: transparent;
   color: #ededed;
-  border: 1px solid red;
+  font-size: 16px;
 }
-/* @media (max-width: 768px) {
-  .search input {
-    width: 100%;
-  }
-  .search {
-    width: 50%;
-  }
-  .add {
-    width: 50%;
-  }
-} */
-
-
 @media (max-width: 768px) {
-  .notes-inner {
-    width: 95%;
+  .notes {
     height: auto;
     flex-direction: column;
   }
   .note-nav {
     width: 100%;
-    height: auto;
+    float: none;
   }
   .note-content {
     width: 100%;
-    height: auto;
-    margin-top: 20px;
+    float: none;
+    margin-top: 30px;
   }
 }

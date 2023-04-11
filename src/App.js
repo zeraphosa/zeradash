@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
-import { Icon } from "./components/Icons";
 import SettingsModal from "./components/modals/SettingsModal";
 import ProfileModal from "./components/modals/ProfileModal";
 import Sidebar from "./layout/sidebar/Sidebar";
