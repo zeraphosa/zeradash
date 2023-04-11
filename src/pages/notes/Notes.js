@@ -1,3 +1,4 @@
+import { Icon } from "../../components/Icons";
 import "./style.css";
 
 export default function Notes() {
@@ -6,17 +7,64 @@ export default function Notes() {
       <div className="notes-inner">
         <div className="note-nav">
           <div className="search">
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search notes" />
           </div>
-          <div className="add">
-            <button>Add new note</button>
+          <div className="note-header">
+            {data.map((item, id) => (
+              <div key={id}  className="header-item">
+                <div className="item-text">
+                  <p>{item.text}</p>
+                  <span>{item.date}</span>
+                </div>
+                <div className="close-btn">
+                  <Icon name="close" size={18} />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="note-content">
-          <div className="note-header">aas</div>
-          <div className="note-text">asdf</div>
+          <div className="add">
+            <button>Add new note</button>
+          </div>
+          <div className="note-text">
+            <textarea>
+              
+            </textarea>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+const data = [
+  {
+    text: "header",
+    date: "10/04/2023",
+  },
+  {
+    text: "asdfasdf",
+    date: "12/04/2023",
+  },
+  {
+    text: "heasdfasdader",
+    date: "10/04/2023",
+  },
+  {
+    text: "headeasdfasdfasdfdsfasdfasdfasdfasdfdasfafasdfasdfasdfr",
+    date: "10/04/2023",
+  },
+  {
+    text: "headeasdfasdr",
+    date: "10/04/2023",
+  },
+  {
+    text: "headeasdfr",
+    date: "10/04/2023",
+  },
+  {
+    text: "asdfasdfaeader",
+    date: "10/04/2023",
+  },
+];

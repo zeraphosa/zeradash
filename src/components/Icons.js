@@ -174,6 +174,7 @@ function SearchIcon({ size }) {
   );
 }
 
+
 const Icon = ({ name, size }) => {
   const icons = {
     dashboard: DashboardIcon,

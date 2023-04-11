@@ -9,37 +9,74 @@
   width: 95%;
   height: 95%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px 0px;
   margin: auto;
 }
 .note-nav {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.note-content {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid red;
+}
+.note-header {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.header-item {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+}
+.item-text {
+  border-bottom: 1px solid #979aa2;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  line-height: 0px;
+  overflow: hidden;
+}
+.item-text span {
+  font-size: 12px;
+  color: #979aa2;
+}
+.close-btn {
+  width: 10%;
+}
+
+
+.note-text {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.search {
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
 }
-.note-content {
-  width: 100%;
-  height: calc(100% - 50px);
-  display: flex;
-  justify-content: space-between;
-}
-.search {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
 .add {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 25px;
+  border: 1px solid green;
 }
-
 .add button {
   border: none;
   padding: 7px 15px;
@@ -55,9 +92,8 @@
   outline: none;
   display: block;
   background-color: transparent;
-  width: 80%;
+  width: 60%;
   height: 30px;
-  color: #ffffff;
   border-radius: 0px;
   padding-left: 5px;
   border-bottom: 1px solid #979aa2;
@@ -67,4 +103,37 @@
 }
 .search input::-moz-placeholder {
   color: #ededed;
+}
+
+/* @media (max-width: 768px) {
+  .search input {
+    width: 100%;
+  }
+  .search {
+    width: 50%;
+  }
+  .add {
+    width: 50%;
+  }
+} */
+
+
+@media (max-width: 768px) {
+  .notes {
+    height: auto;
+  }
+  .notes-inner {
+    width: 95%;
+    height: 60%;
+    flex-direction: column;
+  }
+  .note-nav {
+    width: 100%;
+    height: 100%;
+  }
+  .note-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+  }
 }
