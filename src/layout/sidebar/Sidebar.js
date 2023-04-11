@@ -14,7 +14,7 @@ export default function Sidebar() {
             <Link to="/">
               <h1 className="brand-letter">Z</h1>
             </Link>
-            <Link to="/" className="brand-text">
+            <Link to="/" className="brand-text d-none">
               <h1>ZERA</h1>
             </Link>
           </div>
