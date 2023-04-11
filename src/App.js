@@ -12,25 +12,21 @@ import Notes from "./pages/notes/Notes";
 import "./style.css";
 
 export default function App() {
-  const [sideToggle, setSideToggle] = useState(false);
   const profile = useSelector((state) => state.modal.profile);
   const settings = useSelector((state) => state.modal.settings);
 
   return (
     <BrowserRouter>
       <div className="app">
-        <Sidebar sideToggle={sideToggle} />
+        <Sidebar />
         <div className="content">
-          <button className="nav" onClick={() => setSideToggle(!sideToggle)}>
-            <Icon name="menu" size={35} />
-          </button>
           <div className="container">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/ecommerce" element={<Ecommerce />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/notes" element={<Notes />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/notes" element={<Notes />} />
+            </Routes>
           </div>
         </div>
         {profile && <ProfileModal />}

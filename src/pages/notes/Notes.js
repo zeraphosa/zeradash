@@ -28,8 +28,8 @@ export default function Notes() {
             <button>Add new note</button>
           </div>
           <div className="note-text">
-            <textarea>
-              
+            <textarea placeholder="New Note" wrap="on">
+
             </textarea>
           </div>
         </div>
@@ -61,6 +61,10 @@ const data = [
   },
   {
     text: "headeasdfr",
+    date: "10/04/2023",
+  },
+  {
+    text: "asdfasdfaeader",
     date: "10/04/2023",
   },
   {
