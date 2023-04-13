@@ -1,7 +1,7 @@
 const initialState = {
   profile: false,
   settings: false,
-  sidebar: false,
+  sidebar: true,
   appearance: false,
 };
 
