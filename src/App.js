@@ -1,32 +1,24 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { useSelector } from "react-redux";
-import Sidebar from "./layout/Sidebar";
+import Sidebar from "./layout/sidebar/Sidebar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
 import Projects from "./pages/projects/Projects";
 import Notes from "./pages/notes/Notes";
 import "./style.css";
+import Navbar from "./layout/navbar/Navbar";
+import { useSelector } from "react-redux";
 
 export default function App() {
   // const profile = useSelector((state) => state.modal.profile);
   // const settings = useSelector((state) => state.modal.settings);
+  const sidebar = useSelector((state)=> state.modal.sidebar);
 
   return (
     <BrowserRouter>
       <div className="app">
         <Sidebar />
-        <div className="main">
-          <div className="navbar">
-            <div className="container">
-              <div className="nav-btn">=</div>
-              <ul>
-                <li>Cur</li>
-                <li>Lan</li>
-                <li>Dark</li>
-                <li>Prof</li>
-              </ul>
-            </div>
-          </div>
+        <div className={`main`} style={sidebar ? {marginLeft: "240px"} : {marginLeft: "0px"}}>
+          <Navbar />
           <div className="content">
             <div className="container">
               <Routes>

@@ -1,109 +1,45 @@
-.sidebar {
-  width: 240px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  left: 0;
-  background-color: #0f172a;
-  transition: all 300ms ease-in-out;
-  border-right: 2px solid #1e293b;
-  padding-right: 5px;
-}
-.sidebar-inner {
+.sidebar .items {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
-.items {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.brand {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #0f172a;
-  margin-bottom: 10px;
-}
-.brand-letter {
-  display: none;
-}
-.brand-text {
-  color: #ffffff;
-  text-decoration: none;
-}
-.item-link {
-  width: 80%;
-  color: #979aa2;
-  text-decoration: none;
-  padding: 6px 0;
-  padding-left: 15px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  gap: 20px;
-  border: none;
-  background-color: #0f172a;
-  cursor: pointer;
-}
-
-.item-link:hover {
-  transition: color 300ms ease-in-out;
-  color: #ffffff;
-}
-.item-link.active {
-  background-color: #1e293b;
-  color: #ffffff;
-}
-.info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-}
-.info span {
-  width: 80%;
-  color: #979aa2;
-  text-decoration: none;
-  padding: 6px 0;
-  padding-left: 15px;
-  font-size: 18px;
-  border: none;
-  background-color: #0f172a;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 50px;
-  }
-  .item-link {
-    width: 80%;
-  }
-  .item-link-mob {
-    width: 80%;
-  }
-  .link-text {
-    display: none;
-  }
-  .brand-text {
-    display: none;
-  }
-  .brand-letter {
+.sidebar .brand{
+    width: 100%;
+    height: 50px;
     display: flex;
-    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar .brand-text{
+    color: #fff;
     text-decoration: none;
-  }
-  .d-none {
-    display: none;
-  }
+}
+.sidebar .links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .navlink{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid green;
+    transition: all 300ms ease-in-out;
+
+}
+.sidebar .info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown-menu{
+    flex-direction: column;
+    padding-left: 50px;
+    box-sizing: border-box;
 }

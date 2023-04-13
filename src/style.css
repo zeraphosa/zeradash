@@ -45,16 +45,6 @@ body {
   border: 1px solid orange;
   margin: 0 auto;
 }
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.navbar ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
 .content .container {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -63,6 +53,12 @@ body {
 @media (max-width: 768px) {
   .sidebar {
     display: none;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
   }
   .main {
     margin: 0;
