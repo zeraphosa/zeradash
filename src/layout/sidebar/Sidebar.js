@@ -1,8 +1,8 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 import { Icon } from "../../components/Icons";
 import "./style.css";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function Sidebar() {
   const [dropdown, setDropdown] = useState(false);
@@ -10,7 +10,7 @@ export default function Sidebar() {
   const dispatch = useDispatch();
   console.log("side:", sidebar);
   return (
-    <div className={`sidebar`} style={sidebar ? { display: "flex" } : { display: "none" }}>
+    <div className={`sidebar dark`} style={sidebar ? { display: "flex" } : { display: "none" }}>
       <div className="items">
         <div className="brand">
           <span></span>
