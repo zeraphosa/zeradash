@@ -10,6 +10,7 @@ import "./style.css";
 
 export default function App() {
   const sidebar = useSelector((state) => state.modal.sidebar);
+  const appearance = useSelector((state) => state.modal.appearance);
 
   return (
     <BrowserRouter>
@@ -17,8 +18,9 @@ export default function App() {
         <Sidebar />
         <div className={`main ${sidebar && "main-mob"}`} style={sidebar ? { marginLeft: "240px" } : { marginLeft: "0px" }}>
           <Navbar />
-          <div className="content">
-            <div className="container light">
+          {/* ${appearance ? "dark" : "light"} */}
+          <div className={`content`}>
+            <div className="container">
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />

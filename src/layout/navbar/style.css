@@ -9,6 +9,10 @@
   align-items: center;
   gap: 20px;
 }
+.navbar ul li,
+.nav-btn {
+  cursor: pointer;
+}
 .nav-close-btn {
   display: none;
 }

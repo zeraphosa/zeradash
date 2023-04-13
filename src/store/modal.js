@@ -2,6 +2,7 @@ const initialState = {
   profile: false,
   settings: false,
   sidebar: false,
+  appearance: false,
 };
 
 const modal = (state = initialState, action) => {
@@ -12,6 +13,8 @@ const modal = (state = initialState, action) => {
       return { ...state, settings: !state.settings };
     case "setSidebar":
       return { ...state, sidebar: !state.sidebar };
+    case "setAppearance":
+      return { ...state, appearance: !state.appearance };
     default:
       return state;
   }

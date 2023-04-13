@@ -5,30 +5,33 @@ import { Icon } from "../../components/Icons";
 import "./style.css";
 
 export default function Sidebar() {
-  const [dropdown, setDropdown] = useState(false);
-  const sidebar = useSelector((state) => state.modal.sidebar);
   const dispatch = useDispatch();
-  console.log("side:", sidebar);
+  const sidebar = useSelector((state) => state.modal.sidebar);
+  const appearance = useSelector((state) => state.modal.appearance);
+  const [dropdown, setDropdown] = useState(false);
+
   return (
-    <div className={`sidebar dark`} style={sidebar ? { display: "flex" } : { display: "none" }}>
+    <div className={`sidebar ${appearance ? "dark" : "light"}`} style={sidebar ? { display: "flex" } : { display: "none" }}>
       <div className="items">
         <div className="brand">
           <span></span>
-          <Link to="/" className="brand-text">
+          <Link to="/" className="brand-text light-text">
             <h1>ZERA</h1>
           </Link>
-          <div className="nav-close-btn" onClick={()=> dispatch({type: "setSidebar"})}>X</div>
+          <div className="nav-close-btn" onClick={() => dispatch({ type: "setSidebar" })}>
+            <Icon name="close" size={25} />
+          </div>
         </div>
 
         <div className="links">
           {pages.map((item, id) => (
-            <NavLink key={id} to={item.t} className="navlink">
+            <NavLink key={id} to={item.t} className="navlink light-text">
               <Icon name={item.i} size={20} />
               <span>{item.n}</span>
             </NavLink>
           ))}
           <div className="dropdown">
-            <div className="navlink" onClick={() => setDropdown(!dropdown)}>
+            <div className="navlink light-text" onClick={() => setDropdown(!dropdown)}>
               <Icon name="projects" size={20} />
               <span>Projects</span>
             </div>
@@ -40,7 +43,7 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <NavLink to="/" className="navlink">
+        <NavLink to="/" className="navlink light-text">
           <Icon name="ecommerce" size={20} />
           <span>Deneme</span>
         </NavLink>
