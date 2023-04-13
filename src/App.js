@@ -11,13 +11,13 @@ import { useSelector } from "react-redux";
 export default function App() {
   // const profile = useSelector((state) => state.modal.profile);
   // const settings = useSelector((state) => state.modal.settings);
-  const sidebar = useSelector((state)=> state.modal.sidebar);
+  const sidebar = useSelector((state) => state.modal.sidebar);
 
   return (
     <BrowserRouter>
       <div className="app">
         <Sidebar />
-        <div className={`main`} style={sidebar ? {marginLeft: "240px"} : {marginLeft: "0px"}}>
+        <div className={`main ${sidebar ? "main-mob" : null}`} style={sidebar ? { marginLeft: "240px" } : { marginLeft: "0px" }}>
           <Navbar />
           <div className="content">
             <div className="container">

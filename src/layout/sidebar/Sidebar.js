@@ -2,19 +2,22 @@ import { Link, NavLink } from "react-router-dom";
 import { Icon } from "../../components/Icons";
 import "./style.css";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Sidebar() {
   const [dropdown, setDropdown] = useState(false);
   const sidebar = useSelector((state) => state.modal.sidebar);
+  const dispatch = useDispatch();
   console.log("side:", sidebar);
   return (
     <div className={`sidebar`} style={sidebar ? { display: "flex" } : { display: "none" }}>
       <div className="items">
         <div className="brand">
+          <span></span>
           <Link to="/" className="brand-text">
             <h1>ZERA</h1>
           </Link>
+          <div className="nav-close-btn" onClick={()=> dispatch({type: "setSidebar"})}>X</div>
         </div>
 
         <div className="links">
