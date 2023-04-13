@@ -10,7 +10,6 @@ export default function Sidebar() {
   const sidebar = useSelector((state) => state.modal.sidebar);
   const [theme] = useTheme();
   const [dropdown, setDropdown] = useState(false);
-  console.log("sidebar", sidebar);
 
   return (
     <div className={`sidebar ${theme}`} style={sidebar ? { display: "flex" } : { display: "none" }}>
@@ -28,15 +27,26 @@ export default function Sidebar() {
         <div className="links">
           {pages.map((item, id) => (
             <>
-              <NavLink key={id} to={item.t} className="navlink">
+              <NavLink
+                key={id}
+                to={item.t}
+                className={"navlink"}
+                style={item.d === true ? { backgroundColor: "transparent" } : null}
+                onClick={() => {
+                  item.d && setDropdown(!dropdown);
+                }}
+              >
                 <Icon name={item.i} size={20} />
                 <span>{item.n}</span>
-                <div onClick={() => setDropdown(!dropdown)}>{item.d && <Icon name="arrowDown" size={10} />}</div>
+                <div onClick={() => setDropdown(!dropdown)}>{item.d ? dropdown ? <Icon name="arrowUp" size={10} /> : <Icon name="arrowDown" size={10} /> : null}</div>
               </NavLink>
               {item.d && (
                 <div className="dropdown-menu" style={dropdown ? { display: "flex" } : { display: "none" }}>
-                  <NavLink to="/projects/project1">Project 1</NavLink>
-                  <NavLink to="/projects/project2">Project 2</NavLink>
+                  {projects.map((item, id) => (
+                    <NavLink key={id} to={item.t} className="navlink">
+                      {item.n}
+                    </NavLink>
+                  ))}
                 </div>
               )}
             </>
@@ -54,6 +64,25 @@ export default function Sidebar() {
 const pages = [
   { n: "Dashboard", t: "/", i: "dashboard", d: false },
   { n: "Ecommerce", t: "/ecommerce", i: "ecommerce", d: false },
-  { n: "Projects", t: "/projects", i: "projects", d: true },
+  { n: "Projects", t: "#", i: "projects", d: true },
   { n: "Notes", t: "/notes", i: "notes", d: false },
+];
+
+const projects = [
+  {
+    n: "portfolio",
+    t: "/projects/project1",
+  },
+  {
+    n: "basic projects",
+    t: "/projects/project2",
+  },
+  {
+    n: "gerda butter",
+    t: "/projects/project3",
+  },
+  {
+    n: "create new project",
+    t: "/projects/createproject",
+  },
 ];

@@ -16,7 +16,7 @@ export default function Navbar() {
         <ul>
           <li>USD</li>
           <li>English</li>
-          <li onClick={toggleTheme}>{theme === "light" ? <Icon name="light" size={25} /> : <Icon name="dark" size={25} />}</li>
+          <li onClick={toggleTheme}>{theme === "light" ? <Icon name="dark" size={25} /> : <Icon name="light" size={25} />}</li>
           <li>
             <Icon name="user" size={25} />
           </li>
