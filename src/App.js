@@ -1,34 +1,31 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
-import SettingsModal from "./components/modals/SettingsModal";
-import ProfileModal from "./components/modals/ProfileModal";
-import Sidebar from "./layout/sidebar/Sidebar";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Ecommerce from "./pages/ecommerce/Ecommerce";
-import Projects from "./pages/projects/Projects";
-import Notes from "./pages/notes/Notes";
+import { BrowserRouter } from "react-router-dom";
+// import { useSelector } from "react-redux";
 import "./style.css";
 
 export default function App() {
-  const profile = useSelector((state) => state.modal.profile);
-  const settings = useSelector((state) => state.modal.settings);
+  // const profile = useSelector((state) => state.modal.profile);
+  // const settings = useSelector((state) => state.modal.settings);
 
   return (
     <BrowserRouter>
       <div className="app">
-        <Sidebar />
-        <div className="content">
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/ecommerce" element={<Ecommerce />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/notes" element={<Notes />} />
-            </Routes>
+        <div className="sidebar">slider</div>
+        <div className="main">
+          <div className="navbar">
+            <div className="container">
+              <div className="nav-btn">=</div>
+              <ul>
+                <li>Cur</li>
+                <li>Lan</li>
+                <li>Dark</li>
+                <li>Prof</li>
+              </ul>
+            </div>
+          </div>
+          <div className="content">
+            <div className="container">content</div>
           </div>
         </div>
-        {profile && <ProfileModal />}
-        {settings && <SettingsModal />}
       </div>
     </BrowserRouter>
   );
