@@ -10,7 +10,6 @@ import "./style.css";
 
 export default function App() {
   const sidebar = useSelector((state) => state.modal.sidebar);
-  const appearance = useSelector((state) => state.modal.appearance);
 
   return (
     <BrowserRouter>

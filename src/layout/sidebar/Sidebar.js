@@ -2,16 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Icon } from "../../components/Icons";
+import useTheme from "../../hooks/useTheme";
 import "./style.css";
 
 export default function Sidebar() {
   const dispatch = useDispatch();
   const sidebar = useSelector((state) => state.modal.sidebar);
-  const appearance = useSelector((state) => state.modal.appearance);
+  const [theme] = useTheme();
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <div className={`sidebar ${appearance ? "dark" : "light"}`} style={sidebar ? { display: "flex" } : { display: "none" }}>
+    <div className={`sidebar ${theme}`} style={sidebar ? { display: "flex" } : { display: "none" }}>
       <div className="items">
         <div className="brand">
           <span></span>
