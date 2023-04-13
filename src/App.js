@@ -1,5 +1,10 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { useSelector } from "react-redux";
+import Sidebar from "./layout/Sidebar";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Ecommerce from "./pages/ecommerce/Ecommerce";
+import Projects from "./pages/projects/Projects";
+import Notes from "./pages/notes/Notes";
 import "./style.css";
 
 export default function App() {
@@ -9,7 +14,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <div className="sidebar">slider</div>
+        <Sidebar />
         <div className="main">
           <div className="navbar">
             <div className="container">
@@ -23,7 +28,14 @@ export default function App() {
             </div>
           </div>
           <div className="content">
-            <div className="container">content</div>
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/ecommerce" element={<Ecommerce />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/notes" element={<Notes />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </div>
