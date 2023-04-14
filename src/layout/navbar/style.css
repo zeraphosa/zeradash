@@ -16,6 +16,20 @@
 .nav-close-btn {
   display: none;
 }
+.navbar button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.nav-dropdown{
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 100%;
+  padding: 10px;
+}
 @media (max-width: 500px) {
   .nav-close-btn {
     display: block;
