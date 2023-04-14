@@ -10,7 +10,7 @@ export default function Navbar() {
   const [theme, toggleTheme] = useTheme();
   const [lanDropdown, setLanDropdown] = useState(false);
   const [curDropdown, setCurDropdown] = useState(false);
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(JSON.parse(localStorage.getItem("lang")));
   const [currency, setCurrency] = useState("USD");
   const dropdownRef = useRef(null);
   const { i18n } = useTranslation();
@@ -27,6 +27,13 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   });
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("lang")) === language) {
+      i18n.changeLanguage(JSON.parse(localStorage.getItem("lang")));
+    }
+    localStorage.setItem("lang", JSON.stringify(language));
+  }, [language, i18n]);
 
   return (
     <div className={`navbar ${theme}`}>
