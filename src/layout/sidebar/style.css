@@ -13,7 +13,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .sidebar .navlink {
   display: flex;
@@ -22,7 +22,7 @@
   height: 40px;
   padding-left: 10px;
   border-radius: 5px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .sidebar .info {
@@ -42,9 +42,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.sidebar .arrow{
-  transition: all .3s ease-in-out;
-}
+
 .sidebar .brand span {
   display: none;
 }
@@ -57,6 +55,16 @@
     top: 0;
     left: 0;
     z-index: 2;
+  }
+  .sidebar .items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar .links {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
   }
   .sidebar .brand {
     width: 100%;

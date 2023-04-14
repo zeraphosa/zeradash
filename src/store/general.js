@@ -2,10 +2,10 @@ const initialState = {
   profile: false,
   settings: false,
   sidebar: true,
-  appearance: false,
+  appearance: true,
 };
 
-const modal = (state = initialState, action) => {
+const general = (state = initialState, action) => {
   switch (action.type) {
     case "setProfile":
       return { ...state, profile: !state.profile };
@@ -19,4 +19,4 @@ const modal = (state = initialState, action) => {
       return state;
   }
 };
-export default modal;
+export default general;

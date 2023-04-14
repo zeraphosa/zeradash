@@ -11,7 +11,7 @@ import Notes from "./pages/notes/Notes";
 import "./style.css";
 
 export default function App() {
-  const sidebar = useSelector((state) => state.modal.sidebar);
+  const sidebar = useSelector((state) => state.general.sidebar);
 
   return (
     <BrowserRouter>

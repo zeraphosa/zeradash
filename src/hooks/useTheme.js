@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 export default function useDarkMode() {
   const dispatch = useDispatch();
-  const mode = useSelector((state) => state.modal.appearance);
+  const mode = useSelector((state) => state.general.appearance);
   const [theme, setTheme] = useState("light");
 
   function toggleTheme() {

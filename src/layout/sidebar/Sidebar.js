@@ -4,10 +4,11 @@ import { useState } from "react";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
 import "./style.css";
+import Time from "../../components/Time";
 
 export default function Sidebar() {
   const dispatch = useDispatch();
-  const sidebar = useSelector((state) => state.modal.sidebar);
+  const sidebar = useSelector((state) => state.general.sidebar);
   const [theme] = useTheme();
   const [dropdown, setDropdown] = useState(false);
 
@@ -26,9 +27,8 @@ export default function Sidebar() {
 
         <div className="links">
           {pages.map((item, id) => (
-            <>
+            <div key={id}>
               <NavLink
-                key={id}
                 to={item.t}
                 className={"navlink"}
                 style={item.d === true ? { backgroundColor: "transparent" } : null}
@@ -49,13 +49,13 @@ export default function Sidebar() {
                   ))}
                 </div>
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>
       <div className="info">
         <span>Baku, 16C</span>
-        <span>11:38</span>
+        <Time />
       </div>
     </div>
   );

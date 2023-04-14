@@ -15,7 +15,7 @@
 
 ## Technologies
 
-- React js, Bootstrap, Axios, react-router-dom, Redux
+- React js, Bootstrap, Axios, react-router-dom, Redux, moment-timezone
 - Node js, Express, MySql, Nodemon, Postman, Cors
 
 ## Color Reference

@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import modal from "./modal";
+import general from "./general";
 
 const store = configureStore({
   reducer: {
-    modal,
+    general,
   },
 });
 

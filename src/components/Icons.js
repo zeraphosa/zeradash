@@ -199,7 +199,7 @@ function LightModeIcon({ size }) {
 function ArrowDownIcon({ size }) {
   return (
     <svg width={size} height={size} viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -6684.000000)" fill="currentColor">
           <g id="icons" transform="translate(56.000000, 160.000000)">
             <path
