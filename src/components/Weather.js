@@ -3,41 +3,38 @@ import { useEffect, useState } from "react";
 import { Icon } from "./Icons";
 
 export default function Weather() {
+  const API_KEY = process.env.REACT_APP_WEATHER_API;
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
-      fetchWeatherData(latitude, longitude);
+      axios
+        .get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${latitude},${longitude}`)
+        .then((res) => {
+          setWeather(res.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
     });
-  }, []);
-
-  const fetchWeatherData = (latitude, longitude) => {
-    axios
-      .get(`https://api.weatherapi.com/v1/current.json?key=621da8d76bad46fe82363946231404&q=${latitude},${longitude}`)
-      .then((res) => {
-        setWeather(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
-  };
+  }, [API_KEY]);
 
   const renderConditionIcon = (conditionCode) => {
     switch (conditionCode) {
       case 1000:
-        return <Icon name="light" size={20} />;
+        return <Icon name="light" size={17} />;
       case 1003:
-        return <Icon name="wPartlyCloudy" size={20} />;
+        return <Icon name="wPartlyCloudy" size={17} />;
       case 1006:
       case 1009:
-        return <img src="/images/cloudy.png" alt="Cloudy" />;
+        return <Icon name="wCloudy" size={17} />;
       case 1030:
       case 1135:
-        return <img src="/images/fog.png" alt="Fog" />;
+        return <Icon name="wFoggy" size={17} />;
       case 1063:
       case 1180:
       case 1183:
@@ -48,7 +45,7 @@ export default function Weather() {
       case 1240:
       case 1243:
       case 1246:
-        return <img src="/images/rain.png" alt="Rain" />;
+        return <Icon name="wRainy" size={17} />;
       case 1066:
       case 1114:
       case 1210:
@@ -59,11 +56,11 @@ export default function Weather() {
       case 1225:
       case 1255:
       case 1258:
-        return <img src="/images/snow.png" alt="Snow" />;
+        return <Icon name="wSnowy" size={17} />;
       case 1087:
       case 1273:
       case 1276:
-        return <img src="/images/thunderstorm.png" alt="Thunderstorm" />;
+        return <Icon name="wThunder" size={17} />;
       default:
         return null;
     }
@@ -76,7 +73,7 @@ export default function Weather() {
       ) : weather ? (
         <div>
           <p>{weather.location.name}</p>
-          <p style={{display: "flex", alignItems: "center", gap: "10px"}}>
+          <p style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             {weather.current.temp_c}°C {renderConditionIcon(weather.current.condition.code)}
           </p>
         </div>
