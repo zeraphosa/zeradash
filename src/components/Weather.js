@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Icon } from "./Icons";
+import { useTranslation } from "react-i18next";
 
 export default function Weather() {
   const API_KEY = process.env.REACT_APP_WEATHER_API;
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -69,7 +71,7 @@ export default function Weather() {
   return (
     <span>
       {loading ? (
-        <p>Loading...</p>
+        <p>{t("loading")}...</p>
       ) : weather ? (
         <div>
           <p>{weather.location.name}</p>
@@ -78,7 +80,7 @@ export default function Weather() {
           </p>
         </div>
       ) : (
-        <p>Unable to retrieve weather data</p>
+        <p>{t("weather")}</p>
       )}
     </span>
   );

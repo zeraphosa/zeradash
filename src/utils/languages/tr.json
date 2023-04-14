@@ -1,4 +1,9 @@
 {
-  "header": "başlık",
-  "paragraph": "paragraf"
+  "dashboard": "Kontrol paneli",
+  "ecommerce": "E ticaret",
+  "projects": "Projeler",
+  "notes": "Notlar",
+  "newproject": "yeni proje oluştur",
+  "weather": "Hava durumu verileri alınamıyor",
+  "loading": "Yükleniyor"
 }

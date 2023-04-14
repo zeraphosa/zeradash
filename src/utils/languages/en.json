@@ -1,5 +1,9 @@
 {
-    "header": "header",
-    "paragraph": "paragraph"
-  }
-  
+  "dashboard": "Dashboard",
+  "ecommerce": "Ecommerce",
+  "projects": "Projects",
+  "notes": "Notes",
+  "newproject": "create new project",
+  "weather": "Unable to retrieve weather data",
+  "loading": "Loading"
+}

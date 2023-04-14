@@ -19,8 +19,7 @@ export default function App() {
         <Sidebar />
         <div className={`main ${sidebar && "main-mob"}`} style={sidebar ? { marginLeft: "240px" } : { marginLeft: "0px" }}>
           <Navbar />
-          {/* ${appearance ? "dark" : "light"} */}
-          <div className={`content`}>
+          <div className="content">
             <div className="container">
               <Routes>
                 <Route path="/" element={<Dashboard />} />

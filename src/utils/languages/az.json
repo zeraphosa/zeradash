@@ -1,4 +1,9 @@
 {
-  "header": "başlıq",
-  "paragraph": "paraqraf"
+  "dashboard": "İdarə paneli",
+  "ecommerce": "E ticarət",
+  "projects": "Layihələr",
+  "notes": "Qeydlər",
+  "newproject": "yeni layihə əlavə et",
+  "weather": "Hava məlumatı göstərilə bilmir",
+  "loading": "Yüklənir"
 }
