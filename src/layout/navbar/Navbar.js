@@ -3,6 +3,7 @@ import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
 import "./style.css";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [language, setLanguage] = useState("English");
   const [currency, setCurrency] = useState("USD");
   const dropdownRef = useRef(null);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -47,8 +49,15 @@ export default function Navbar() {
             {language}
             <div className={`nav-dropdown ${theme}`} style={lanDropdown ? { display: "flex" } : { display: "none" }}>
               {lan.map((item, id) => (
-                <button key={id} onClick={() => setLanguage(`${item}`)}>
-                  {item}
+                <button
+                  key={id}
+                  value={item.v}
+                  onClick={(e) => {
+                    setLanguage(item.l);
+                    i18n.changeLanguage(e.target.value);
+                  }}
+                >
+                  {item.l}
                 </button>
               ))}
             </div>
@@ -59,9 +68,24 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      <p style={{color:"#000"}}>{t('header')}</p>
+      <p style={{color:"#000"}}>{t('paragraph')}</p>
     </div>
   );
 }
 
-const lan = ["English", "Turkish", "Azerbaijani"];
+const lan = [
+  {
+    l: "English",
+    v: "en",
+  },
+  {
+    l: "Turkish",
+    v: "tr",
+  },
+  {
+    l: "Azerbaijani",
+    v: "az",
+  },
+];
 const cur = ["USD", "CAD", "AZN", "TL", "RB"];
