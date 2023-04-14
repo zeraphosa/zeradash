@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export default function Time(){
     const [time, setTime] = useState(new Date());
-    const currentTime = time.toLocaleTimeString([], { hour: "numeric", minute: "numeric", second: "numeric", hour12: false })
+    const currentTime = time.toLocaleTimeString([], { hour: "numeric", minute: "numeric", hour12: false })
     useEffect(()=>{
         const interval = setInterval(()=>{
             setTime(new Date());

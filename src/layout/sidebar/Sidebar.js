@@ -5,6 +5,7 @@ import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
 import "./style.css";
 import Time from "../../components/Time";
+import Weather from "../../components/Weather";
 
 export default function Sidebar() {
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ export default function Sidebar() {
         </div>
       </div>
       <div className="info">
-        <span>Baku, 16C</span>
+        <Weather />
         <Time />
       </div>
     </div>
