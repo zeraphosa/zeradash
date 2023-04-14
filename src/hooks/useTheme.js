@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function useDarkMode() {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.general.appearance);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
 
   function toggleTheme() {
     dispatch({ type: "setAppearance" });
   }
+
+  useEffect(() => {
+    const storedMode = JSON.parse(localStorage.getItem("mode"));
+    if (storedMode) {
+      dispatch({ type: "setAppearance", payload: storedMode });
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     if (mode === true) {
@@ -17,7 +23,10 @@ export default function useDarkMode() {
     } else {
       setTheme("light");
     }
+    localStorage.setItem("mode", JSON.stringify(mode));
   }, [mode]);
 
-  return [theme, toggleTheme]
+  return [theme, toggleTheme];
 }
+
+// localStorage.setItem("theme", JSON.stringify(mode));
