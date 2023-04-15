@@ -8,8 +8,10 @@
 }
 .notes .titles {
   width: 30%;
-  min-height: 100vh;
-  border-right: 1px solid #fff;
+  max-height: 100vh;
+  border-right: 1px solid;
+  border-color: initial;
+  overflow: auto;
 }
 .notes .content {
   width: 70%;
@@ -18,14 +20,17 @@
 }
 .notes .content .add-btn {
   height: 50px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid;
+  border-color: initial;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 .notes .content .content-text {
   padding: 20px;
+  box-sizing: border-box;
 }
 .content-text textarea {
   width: 100%;
@@ -38,6 +43,26 @@
   color: inherit;
 }
 
+.title-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    height: 70px;
+    border-bottom: 1px solid;
+    border-color: initial;
+}
+.title-item div{
+    width: 100%;
+}
+.title-item p{
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+.title-item span{
+    font-size: 14px;
+}
+
 @media (max-width: 500px) {
     .notes{
         height: auto;
@@ -47,7 +72,8 @@
         width: 100%;
         min-height: auto;
         border-right: none;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid;
+        border-color: initial;
     }
     .notes .content{
         width: 100%;
