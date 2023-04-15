@@ -1,29 +1,55 @@
-.notes{
-    width: 100%;
-    height: 80vh;
-    background-color: inherit;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
+.notes {
+  width: 100%;
+  height: 80vh;
+  background-color: inherit;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
-.notes .titles{
-    width: 30%;
-    border-right: 1px solid #fff;
+.notes .titles {
+  width: 30%;
+  min-height: 100vh;
+  border-right: 1px solid #fff;
 }
-.notes .content{
-    border: 1px solid green;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
+.notes .content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
-.notes .content .add-btn{
-    height: 50px;
-    border-bottom: 1px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 20px;
+.notes .content .add-btn {
+  height: 50px;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
 }
-.notes .content .content-text{
-    padding: 10px;
+.notes .content .content-text {
+  padding: 20px;
+}
+.content-text textarea {
+  width: 100%;
+  height: 500px;
+  resize: none;
+  outline: none;
+  border: none;
+  overflow: auto;
+  background-color: transparent;
+  color: inherit;
+}
+
+@media (max-width: 500px) {
+    .notes{
+        height: auto;
+        flex-direction: column;
+    }
+    .notes .titles{
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #fff;
+    }
+    .notes .content{
+        width: 100%;
+    }
 }

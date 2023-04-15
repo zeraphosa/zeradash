@@ -18,7 +18,7 @@ export default function Notes() {
             <button>Add new note</button>
         </div>
         <div className="content-text">
-            <textarea></textarea>
+            <textarea placeholder="New Note" wrap="on" autoFocus="true"></textarea>
         </div>
       </div>
     </div>
