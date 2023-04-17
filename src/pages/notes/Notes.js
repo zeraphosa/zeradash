@@ -49,30 +49,3 @@ export default function Notes() {
     </div>
   );
 }
-
-// const data = [
-//   {
-//     h: "notes header",
-//     d: "12.01.2020",
-//   },
-//   {
-//     h: "no312tes header",
-//     d: "13.01.2020",
-//   },
-//   {
-//     h: "notesasdfasd header",
-//     d: "15.12.2020",
-//   },
-//   {
-//     h: "notes header",
-//     d: "21.05.2023",
-//   },
-//   {
-//     h: "nosdafasdfdasffdsaasdffdsafsdafdstes header",
-//     d: "12.01.2020",
-//   },
-//   {
-//     h: "notes header",
-//     d: "12.01.2020",
-//   },
-// ];

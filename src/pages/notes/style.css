@@ -72,14 +72,15 @@
   padding: 7px 15px;
   text-transform: uppercase;
   border-radius: 3px;
-  background-color: #4f46e5;
+  background-color: #DA0037;
   color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.5px;
   cursor: pointer;
 }
 .item-active{
-  background-color: #4f46e5;
+  background-color: #DA0037;
+  color: #ffffff;
 }
 @media (max-width: 768px) {
   .notes {
