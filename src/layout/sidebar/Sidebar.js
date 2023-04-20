@@ -11,6 +11,7 @@ import "./style.css";
 export default function Sidebar() {
   const dispatch = useDispatch();
   const sidebar = useSelector((state) => state.general.sidebar);
+  const { projects } = useSelector((state) => state.projects);
   const [theme] = useTheme();
   const [dropdown, setDropdown] = useState(false);
   const { t } = useTranslation();
@@ -52,8 +53,8 @@ export default function Sidebar() {
               {item.d && (
                 <div className="dropdown-menu" style={dropdown ? { display: "flex" } : { display: "none" }}>
                   {projects.map((item, id) => (
-                    <NavLink key={id} to={item.t} className="navlink">
-                      {item.n}
+                    <NavLink key={id} to={`/projects/${item.name}`} className="navlink">
+                      {item.name}
                     </NavLink>
                   ))}
                   <NavLink to="/projects/newproject" className="navlink newproject">
@@ -73,17 +74,17 @@ export default function Sidebar() {
   );
 }
 
-const projects = [
-  {
-    n: "portfolio",
-    t: "/projects/project1",
-  },
-  {
-    n: "basic projects",
-    t: "/projects/project2",
-  },
-  {
-    n: "gerda butter",
-    t: "/projects/project3",
-  },
-];
+// const projects = [
+//   {
+//     n: "portfolio",
+//     t: "/projects/project1",
+//   },
+//   {
+//     n: "basic projects",
+//     t: "/projects/project2",
+//   },
+//   {
+//     n: "gerda butter",
+//     t: "/projects/project3",
+//   },
+// ];

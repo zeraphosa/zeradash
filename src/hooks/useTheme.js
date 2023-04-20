@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function useDarkMode() {
+export default function useTheme() {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.general.appearance);
   const [theme, setTheme] = useState("");

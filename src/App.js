@@ -2,9 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
-import Projects from "./pages/projects/Projects";
-import Project1 from "./pages/projects/project-contents/Project1";
-import Project2 from "./pages/projects/project-contents/Project2";
+import ProjectDetails from "./pages/projects/ProjectDetails";
 import Sidebar from "./layout/sidebar/Sidebar";
 import Navbar from "./layout/navbar/Navbar";
 import Notes from "./pages/notes/Notes";
@@ -24,10 +22,8 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/projects/project1" element={<Project1 />} />
-                <Route path="/projects/project2" element={<Project2 />} />
-                <Route path="/notes" element={<Notes />} /> 
+                <Route path="/projects/:projectName" element={<ProjectDetails />} />
+                <Route path="/notes" element={<Notes />} />
               </Routes>
             </div>
           </div>

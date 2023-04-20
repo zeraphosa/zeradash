@@ -3,6 +3,7 @@
   "ecommerce": "Ecommerce",
   "projects": "Projects",
   "notes": "Notes",
+  "blog": "Blog",
   "newproject": "create new project",
   "weather": "Unable to retrieve weather data",
   "loading": "Loading"
