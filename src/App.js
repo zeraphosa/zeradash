@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CreateProjectModal from "./pages/projects/CreateProjectModal";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Ecommerce from "./pages/ecommerce/Ecommerce";
 import ProjectDetails from "./pages/projects/ProjectDetails";
@@ -22,7 +23,8 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
-                <Route path="/projects/:projectName" element={<ProjectDetails />} />
+                <Route path="/:projectName" element={<ProjectDetails />} />
+                <Route path="/newproject" element={<CreateProjectModal />} />
                 <Route path="/notes" element={<Notes />} />
               </Routes>
             </div>
