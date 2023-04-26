@@ -6,7 +6,7 @@ import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
 import Weather from "../../components/Weather";
 import Time from "../../components/Time";
-import "./style.css";
+import "./style.scss";
 
 export default function Sidebar() {
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ export default function Sidebar() {
                       {project.projectName}
                     </NavLink>
                   ))}
-                  <NavLink to="/projects/newproject" className="navlink newproject">
+                  <NavLink to="#" className="navlink" onClick={()=> dispatch({ type: "setCreateProject" })}>
                     {t("newproject")} +
                   </NavLink>
                 </div>

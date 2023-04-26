@@ -1,31 +1,31 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { addProject } from "../../store/projects";
+import { useState } from "react";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
-import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 export default function CreateProjectModal() {
   const navigate = useNavigate();
-  const [theme] = useTheme();
   const dispatch = useDispatch();
   const [projectName, setProjectName] = useState("");
+  const [theme] = useTheme();
 
   function addNewProject() {
     const newProject = { projectName };
     dispatch(addProject(newProject));
     setProjectName("");
-    // if (newProject) navigate(`/${projectName}`);
+    if(projectName) navigate(`/projects/${projectName}`);
   }
 
   return (
     <>
-      <div className="modal" onClick={() => navigate("/")}></div>
+      <div className="modal" onClick={() => dispatch({ type: "setCreateProject" })}></div>
       <div className={`modal-inner ${theme}`}>
         <div className="modal-header">
           <div></div>
-          <button className="close-btn" onClick={() => navigate("/")}>
+          <button className="close-btn" onClick={() => dispatch({ type: "setCreateProject" })}>
             <Icon name="close" size={25} />
           </button>
         </div>

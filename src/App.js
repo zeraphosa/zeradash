@@ -11,6 +11,7 @@ import "./style.css";
 
 export default function App() {
   const sidebar = useSelector((state) => state.general.sidebar);
+  const createproject = useSelector((state) => state.general.createproject);
   const project = useSelector((state) => state.projects.projectName);
 
   return (
@@ -25,9 +26,10 @@ export default function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
                 <Route path={`/projects/:${project}`} element={<ProjectDetails />} />
-                <Route path="/projects/newproject" element={<CreateProjectModal />} />
+                {/* <Route path="/projects/newproject" element={<CreateProjectModal />} /> */}
                 <Route path="/notes" element={<Notes />} />
               </Routes>
+              {createproject && <CreateProjectModal />}
             </div>
           </div>
         </div>

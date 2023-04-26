@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const projects = createSlice({
   name: "projects",
-  initialState: [],
+  initialState: [{projectName:"zaursharifov"}],
   reducers: {
     addProject: (state, action) => {
       state.push(action.payload);

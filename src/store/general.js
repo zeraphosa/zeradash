@@ -3,6 +3,7 @@ const initialState = {
   settings: false,
   sidebar: true,
   appearance: true,
+  createproject: false,
 };
 
 const general = (state = initialState, action) => {
@@ -11,6 +12,8 @@ const general = (state = initialState, action) => {
       return { ...state, profile: !state.profile };
     case "setSettings":
       return { ...state, settings: !state.settings };
+    case "setCreateProject":
+      return { ...state, createproject: !state.createproject };
     case "setSidebar":
       return { ...state, sidebar: !state.sidebar };
     case "setAppearance":
