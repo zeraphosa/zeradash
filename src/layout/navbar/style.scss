@@ -1,0 +1,39 @@
+.navbar {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      li {
+        cursor: pointer;
+        p {
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .nav-dropdown {
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+          position: absolute;
+          top: 100%;
+          padding: 10px;
+        }
+      }
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      color: inherit;
+      cursor: pointer;
+    }
+    .nav-btn {
+      cursor: pointer;
+    }
+  }
+}

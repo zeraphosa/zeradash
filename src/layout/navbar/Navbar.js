@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
-import "./style.css";
+import "./style.scss";
 
 export default function Navbar() {
   const dispatch = useDispatch();

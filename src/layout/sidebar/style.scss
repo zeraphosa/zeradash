@@ -11,6 +11,9 @@
       span {
         display: none;
       }
+      .nav-close-btn {
+        display: none;
+      }
     }
     .links {
       width: 100%;
@@ -63,6 +66,9 @@
         align-items: center;
         justify-content: space-around;
         span {
+          display: block;
+        }
+        .nav-close-btn {
           display: block;
         }
       }
