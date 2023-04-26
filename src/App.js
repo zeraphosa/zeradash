@@ -11,6 +11,7 @@ import "./style.css";
 
 export default function App() {
   const sidebar = useSelector((state) => state.general.sidebar);
+  const project = useSelector((state) => state.projects.projectName);
 
   return (
     <BrowserRouter>
@@ -23,8 +24,8 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
-                <Route path="/:projectName" element={<ProjectDetails />} />
-                <Route path="/newproject" element={<CreateProjectModal />} />
+                <Route path={`/projects/:${project}`} element={<ProjectDetails />} />
+                <Route path="/projects/newproject" element={<CreateProjectModal />} />
                 <Route path="/notes" element={<Notes />} />
               </Routes>
             </div>

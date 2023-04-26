@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addProject } from "../../store/projects";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
@@ -11,14 +11,12 @@ export default function CreateProjectModal() {
   const [theme] = useTheme();
   const dispatch = useDispatch();
   const [projectName, setProjectName] = useState("");
-  //   const [projects, setProjects] = useState([]);
 
   function addNewProject() {
     const newProject = { projectName };
     dispatch(addProject(newProject));
-    // setProjects([...projects, newProject]);
     setProjectName("");
-    navigate(`/${!projectName}`);
+    // if (newProject) navigate(`/${projectName}`);
   }
 
   return (
