@@ -1,0 +1,36 @@
+[
+  {
+    "url": "blog-post-url",
+    "title": "Blog post title",
+    "article": "lorem ipsum dolor aset",
+    "tags": ["news", "technology", "front end development"],
+    "image": "src:////",
+    "comments": [
+      {
+        "user": "Jack london",
+        "comment": "This post is amazing"
+      },
+      {
+        "user": "Example name",
+        "comment": "Example text for comment section"
+      }
+    ]
+  },
+  {
+    "url": "blog-post-url",
+    "title": "Blog post title",
+    "article": "lorem ipsum dolor aset",
+    "tags": ["news", "technology", "front end development"],
+    "image": "src:////",
+    "comments": [
+      {
+        "user": "Jack london",
+        "comment": "This post is amazing"
+      },
+      {
+        "user": "Example name",
+        "comment": "Example text for comment section"
+      }
+    ]
+  }
+]
