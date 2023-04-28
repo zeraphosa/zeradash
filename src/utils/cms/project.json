@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Portfolio project",
+    "info": "This project created to show what i`m done",
+    "techs": ["React js", "Html", "Css"],
+    "image": "src://///",
+    "link": "https://"
+  },
+  {
+    "title": "Ecommerce website",
+    "info": "Sales, customers etc.",
+    "techs": ["Html", "Css", "Javascript"],
+    "image": "src://///",
+    "link": "https://"
+  }
+]
