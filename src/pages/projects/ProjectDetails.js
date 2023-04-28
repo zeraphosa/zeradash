@@ -32,6 +32,73 @@ export default function ProjectDetails() {
           <span>Custom Section</span> <Icon name="add" size={20} />
         </button>
       </div>
+      <div className="content-create">
+        <div className={`header ${theme}`}>
+          <h2>Blog</h2>
+          <div>Delete 0 post</div>
+        </div>
+        <div className="items">
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+          <div className={`create-card ${theme}`}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new post
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
     </div>
   );
 }
