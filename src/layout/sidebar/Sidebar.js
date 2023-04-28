@@ -22,6 +22,13 @@ export default function Sidebar() {
     { n: `${t("notes")}`, t: "/notes", i: "notes", d: false },
   ];
 
+  function HandleNewProject() {
+    dispatch({ type: "setCreateProject" });
+    if (window.innerWidth <= 500) {
+      dispatch({ type: "setSidebar" });
+    }
+  }
+
   return (
     <div className={`sidebar ${theme}`} style={sidebar ? { display: "flex" } : { display: "none" }}>
       <div className="items">
@@ -57,7 +64,7 @@ export default function Sidebar() {
                       {project.projectName}
                     </NavLink>
                   ))}
-                  <NavLink to="#" className="navlink" onClick={()=> dispatch({ type: "setCreateProject" })}>
+                  <NavLink to="#" className="navlink" onClick={HandleNewProject}>
                     {t("newproject")} +
                   </NavLink>
                 </div>

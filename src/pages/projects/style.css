@@ -40,7 +40,7 @@
   box-sizing: border-box;
   gap: 10px;
 }
-.close-btn {
+.close-btn{
   display: flex;
   justify-content: center;
   align-items: center;
