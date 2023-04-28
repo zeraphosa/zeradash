@@ -4,7 +4,7 @@ import { addProject } from "../../store/projects";
 import { useState } from "react";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
-import "./style.css";
+import "./style.scss";
 
 export default function CreateProjectModal() {
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ export default function CreateProjectModal() {
     dispatch(addProject(newProject));
     setProjectName("");
     if(projectName) navigate(`/projects/${projectName}`);
+    dispatch({ type: "setCreateProject" })
   }
 
   return (
