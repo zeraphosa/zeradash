@@ -11,7 +11,6 @@ import AddBlog from "./pages/projects/newpost/AddBlog";
 import AddGallery from "./pages/projects/newpost/AddGallery";
 import AddProduct from "./pages/projects/newpost/AddProduct";
 import AddProject from "./pages/projects/newpost/AddProject";
-import AddCustom from "./pages/projects/newpost/AddCustom";
 import AddTestimonial from "./pages/projects/newpost/AddTestimonial";
 import "./style.css";
 
@@ -37,7 +36,6 @@ export default function App() {
                 <Route path={`/projects/:${project}/newproduct?/:id`} element={<AddProduct />} />
                 <Route path={`/projects/:${project}/newproject?/:id`} element={<AddProject />} />
                 <Route path={`/projects/:${project}/newreview?/:id`} element={<AddTestimonial />} />
-                <Route path={`/projects/:${project}/newcustom?/:id`} element={<AddCustom />} />
                 <Route path="/notes" element={<Notes />} />
               </Routes>
               {createproject && <CreateProjectModal />}

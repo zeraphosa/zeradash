@@ -11,7 +11,7 @@ export default function ProjectDetails() {
   const projects = useSelector((state) => state.projects.find((p) => p.projectName === projectName.undefined));
   const [theme] = useTheme();
   const [defaultSections, setDefaultSections] = useState([]);
-  const [buttons, setButtons] = useState(["Blog", "Project", "Product", "Gallery", "Testimonial", "Custom"]);
+  const [buttons, setButtons] = useState(["Blog", "Project", "Product", "Gallery", "Testimonial"]);
 
   function addNewSection(item) {
     setDefaultSections([...defaultSections, item]);
@@ -34,7 +34,6 @@ export default function ProjectDetails() {
         {defaultSections.includes("Product") && <Sections name={"Product"} project={projects.projectName} />}
         {defaultSections.includes("Gallery") && <Sections name={"Gallery"} project={projects.projectName} />}
         {defaultSections.includes("Testimonial") && <Sections name={"Testimonial"} project={projects.projectName} />}
-        {defaultSections.includes("Custom") && <Sections name={"Custom"} project={projects.projectName} />}
       </div>
     </div>
   );
