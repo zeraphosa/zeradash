@@ -3,12 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
-import Blog from "./sections/Blog";
-import Project from "./sections/Project";
-import Product from "./sections/Product";
-import Gallery from "./sections/Gallery";
-import Testimonial from "./sections/Testimonial";
-import Custom from "./sections/Custom";
+import Sections from "./Sections";
 import "./style.scss";
 
 export default function ProjectDetails() {
@@ -18,7 +13,7 @@ export default function ProjectDetails() {
   const [defaultSections, setDefaultSections] = useState([]);
   const [buttons, setButtons] = useState(["Blog", "Project", "Product", "Gallery", "Testimonial", "Custom"]);
 
-  function addNewContent(item) {
+  function addNewSection(item) {
     setDefaultSections([...defaultSections, item]);
     setButtons(buttons.filter((p) => p !== item));
   }
@@ -27,19 +22,19 @@ export default function ProjectDetails() {
     <div className="project">
       <p>{projects.projectName}</p>
       <div className={`add-section `}>
-        {buttons?.map((item, id) => (
-          <button key={id} className={`add-button ${theme}`} onClick={() => addNewContent(item)}>
+        {buttons.map((item, id) => (
+          <button key={id} className={`add-button ${theme}`} onClick={() => addNewSection(item)}>
             <span>{item}</span> <Icon name="add" size={20} />
           </button>
         ))}
       </div>
       <div className="content-create">
-        {defaultSections.includes("Blog") && <Blog />}
-        {defaultSections.includes("Project") && <Project />}
-        {defaultSections.includes("Product") && <Product />}
-        {defaultSections.includes("Gallery") && <Gallery />}
-        {defaultSections.includes("Testimonial") && <Testimonial />}
-        {defaultSections.includes("Custom") && <Custom />}
+        {defaultSections.includes("Blog") && <Sections name={"Blog"} project={projects.projectName} />}
+        {defaultSections.includes("Project") && <Sections name={"Project"} project={projects.projectName} />}
+        {defaultSections.includes("Product") && <Sections name={"Product"} project={projects.projectName} />}
+        {defaultSections.includes("Gallery") && <Sections name={"Gallery"} project={projects.projectName} />}
+        {defaultSections.includes("Testimonial") && <Sections name={"Testimonial"} project={projects.projectName} />}
+        {defaultSections.includes("Custom") && <Sections name={"Custom"} project={projects.projectName} />}
       </div>
     </div>
   );

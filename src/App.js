@@ -7,6 +7,12 @@ import ProjectDetails from "./pages/projects/ProjectDetails";
 import Sidebar from "./layout/sidebar/Sidebar";
 import Navbar from "./layout/navbar/Navbar";
 import Notes from "./pages/notes/Notes";
+import AddBlog from "./pages/projects/newpost/AddBlog";
+import AddGallery from "./pages/projects/newpost/AddGallery";
+import AddProduct from "./pages/projects/newpost/AddProduct";
+import AddProject from "./pages/projects/newpost/AddProject";
+import AddCustom from "./pages/projects/newpost/AddCustom";
+import AddTestimonial from "./pages/projects/newpost/AddTestimonial";
 import "./style.css";
 
 export default function App() {
@@ -26,7 +32,12 @@ export default function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
                 <Route path={`/projects/:${project}`} element={<ProjectDetails />} />
-                {/* <Route path="/projects/newproject" element={<CreateProjectModal />} /> */}
+                <Route path={`/projects/:${project}/newblogpost`} element={<AddBlog />} />
+                <Route path={`/projects/:${project}/newgallerypost`} element={<AddGallery />} />
+                <Route path={`/projects/:${project}/newproduct`} element={<AddProduct />} />
+                <Route path={`/projects/:${project}/newproject`} element={<AddProject />} />
+                <Route path={`/projects/:${project}/newreview`} element={<AddTestimonial />} />
+                <Route path={`/projects/:${project}/newcustom`} element={<AddCustom />} />
                 <Route path="/notes" element={<Notes />} />
               </Routes>
               {createproject && <CreateProjectModal />}
