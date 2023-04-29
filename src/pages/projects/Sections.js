@@ -7,10 +7,12 @@ import gallerydata from "../../utils/cms/gallery.json";
 import productsdata from "../../utils/cms/products.json";
 import testimonialsdata from "../../utils/cms/testimonials.json";
 import "./style.scss";
+import { useState } from "react";
 
 export default function Sections({ name, project, defaultSections, setDefaultSections, buttons, setButtons }) {
   const [theme] = useTheme();
   const navigate = useNavigate();
+  const [show, setShow] = useState(true);
 
   function addNewContent() {
     if (name === "Blog") navigate(`/projects/${project}/newblogpost/null`);
@@ -28,25 +30,27 @@ export default function Sections({ name, project, defaultSections, setDefaultSec
   }
   return (
     <>
-      <div className={`header ${theme}`}>
+      <div className={`header ${theme}`} onClick={() => setShow(!show)}>
         <h2>{name}</h2>
         <div onClick={deleteSection}>
           <Icon name="delete" size={20} />
         </div>
       </div>
-      <div className="items">
-        <div className={`create-card ${theme}`} onClick={addNewContent}>
-          <div className="card-inner">
-            <Icon name="add" size={30} />
-            Add new content
+      {show && (
+        <div className="items">
+          <div className={`create-card ${theme}`} onClick={addNewContent}>
+            <div className="card-inner">
+              <Icon name="add" size={30} />
+              Add new content
+            </div>
           </div>
+          {name === "Blog" && BlogData(theme, navigate, project)}
+          {name === "Project" && ProjectData(theme, navigate, project)}
+          {name === "Gallery" && GalleryData(theme, navigate, project)}
+          {name === "Product" && ProductData(theme, navigate, project)}
+          {name === "Testimonial" && TestimonialData(theme, navigate, project)}
         </div>
-        {name === "Blog" && BlogData(theme, navigate, project)}
-        {name === "Project" && ProjectData(theme, navigate, project)}
-        {name === "Gallery" && GalleryData(theme, navigate, project)}
-        {name === "Product" && ProductData(theme, navigate, project)}
-        {name === "Testimonial" && TestimonialData(theme, navigate, project)}
-      </div>
+      )}
     </>
   );
 }
