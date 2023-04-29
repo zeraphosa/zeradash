@@ -1,12 +1,11 @@
 ## Admin panel
 
 [www.admin.zaursharifov.com](https://admin.zaursharifov.com)\
-[www.api-admin.zaursharifov.com](https://api-admin.zaursharifov.com)
 
 ## Launc application
 
 ```bash
-  git clone https://github.com/zeraphosa/admin-zeraphosa.git
+  git clone https://github.com/zeraphosa/zeradash.git
 ```
 
 - npm install
@@ -15,7 +14,7 @@
 
 ## Technologies
 
-- React js, Sass, Axios, react-router-dom, Redux,
+- React js, Scss, Axios, react-router-dom, Redux, i18next
 - Node js, Express, MySql, Nodemon, Postman, Cors
 
 ## Color Reference
@@ -32,10 +31,3 @@
 | #979AA2 | ![#979AA2](https://via.placeholder.com/10/979AA2?text=+) | text-2    |
 | #DA0037 | ![#DA0037](https://via.placeholder.com/10/DA0037?text=+) | red       |
 
-## Todo List
-
-- [x] Sidebar
-- [ ] Modals
-- [ ] Dashboard (Home) - task list, todo list, graphics, last incomings, last customer notifications, sales
-- [ ] Ecommerce - Sales, Customers, Products
-- [ ] Private - Todo, Data, Projects

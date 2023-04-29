@@ -8,7 +8,7 @@ import productsdata from "../../utils/cms/products.json";
 import testimonialsdata from "../../utils/cms/testimonials.json";
 import "./style.scss";
 
-export default function Sections({ name, project }) {
+export default function Sections({ name, project, defaultSections, setDefaultSections, buttons, setButtons }) {
   const [theme] = useTheme();
   const navigate = useNavigate();
 
@@ -19,12 +19,15 @@ export default function Sections({ name, project }) {
     else if (name === "Project") navigate(`/projects/${project}/newproject/null`);
     else if (name === "Testimonial") navigate(`/projects/${project}/newreview/null`);
   }
-
+  function deleteSection() {
+    setDefaultSections([defaultSections.filter((p) => p !== name)]);
+    setButtons([name, ...buttons])
+  }
   return (
     <>
       <div className={`header ${theme}`}>
         <h2>{name}</h2>
-        <div>Delete</div>
+        <div onClick={deleteSection}>Delete</div>
       </div>
       <div className="items">
         <div className={`create-card ${theme}`} onClick={addNewContent}>
