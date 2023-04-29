@@ -8,7 +8,7 @@ export default function Project() {
   return (
     <>
       <div className={`header ${theme}`}>
-        <h2>PROJECT</h2>
+        <h2>PROJECTS</h2>
         <div>Delete 0 post</div>
       </div>
       <div className="items">

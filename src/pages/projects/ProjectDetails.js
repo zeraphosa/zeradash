@@ -3,16 +3,20 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Icon } from "../../components/Icons";
 import useTheme from "../../hooks/useTheme";
-import "./style.scss";
 import Blog from "./sections/Blog";
 import Project from "./sections/Project";
+import Product from "./sections/Product";
+import Gallery from "./sections/Gallery";
+import Testimonial from "./sections/Testimonial";
+import Custom from "./sections/Custom";
+import "./style.scss";
 
 export default function ProjectDetails() {
   const projectName = useParams();
   const projects = useSelector((state) => state.projects.find((p) => p.projectName === projectName.undefined));
   const [theme] = useTheme();
   const [defaultSections, setDefaultSections] = useState([]);
-  const [buttons, setButtons] = useState(["Blog", "Project", "Product", "Galery", "Testimonial", "Custom Section"]);
+  const [buttons, setButtons] = useState(["Blog", "Project", "Product", "Gallery", "Testimonial", "Custom"]);
 
   function addNewContent(item) {
     setDefaultSections([...defaultSections, item]);
@@ -32,6 +36,10 @@ export default function ProjectDetails() {
       <div className="content-create">
         {defaultSections.includes("Blog") && <Blog />}
         {defaultSections.includes("Project") && <Project />}
+        {defaultSections.includes("Product") && <Product />}
+        {defaultSections.includes("Gallery") && <Gallery />}
+        {defaultSections.includes("Testimonial") && <Testimonial />}
+        {defaultSections.includes("Custom") && <Custom />}
       </div>
     </div>
   );
