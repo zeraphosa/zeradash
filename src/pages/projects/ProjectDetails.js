@@ -30,10 +30,10 @@ export default function ProjectDetails() {
       </div>
       <div className="content-create">
         {defaultSections.includes("Blog") && <Sections name={"Blog"} project={projects.projectName} setDefaultSections={setDefaultSections} defaultSections={defaultSections} buttons={buttons} setButtons={setButtons} />}
-        {defaultSections.includes("Project") && <Sections name={"Project"} project={projects.projectName} />}
-        {defaultSections.includes("Product") && <Sections name={"Product"} project={projects.projectName} />}
-        {defaultSections.includes("Gallery") && <Sections name={"Gallery"} project={projects.projectName} />}
-        {defaultSections.includes("Testimonial") && <Sections name={"Testimonial"} project={projects.projectName} />}
+        {defaultSections.includes("Project") && <Sections name={"Project"} project={projects.projectName} setDefaultSections={setDefaultSections} defaultSections={defaultSections} buttons={buttons} setButtons={setButtons} />}
+        {defaultSections.includes("Product") && <Sections name={"Product"} project={projects.projectName} setDefaultSections={setDefaultSections} defaultSections={defaultSections} buttons={buttons} setButtons={setButtons} />}
+        {defaultSections.includes("Gallery") && <Sections name={"Gallery"} project={projects.projectName} setDefaultSections={setDefaultSections} defaultSections={defaultSections} buttons={buttons} setButtons={setButtons} />}
+        {defaultSections.includes("Testimonial") && <Sections name={"Testimonial"} project={projects.projectName} setDefaultSections={setDefaultSections} defaultSections={defaultSections} buttons={buttons} setButtons={setButtons} />}
       </div>
     </div>
   );

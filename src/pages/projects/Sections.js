@@ -20,14 +20,19 @@ export default function Sections({ name, project, defaultSections, setDefaultSec
     else if (name === "Testimonial") navigate(`/projects/${project}/newreview/null`);
   }
   function deleteSection() {
-    setDefaultSections([defaultSections.filter((p) => p !== name)]);
-    setButtons([name, ...buttons])
+    if (window.confirm("Section will delete permanently") === true) {
+      console.log(defaultSections);
+      setDefaultSections(defaultSections.filter((p) => p !== name));
+      setButtons([name, ...buttons]);
+    }
   }
   return (
     <>
       <div className={`header ${theme}`}>
         <h2>{name}</h2>
-        <div onClick={deleteSection}>Delete</div>
+        <div onClick={deleteSection}>
+          <Icon name="delete" size={20} />
+        </div>
       </div>
       <div className="items">
         <div className={`create-card ${theme}`} onClick={addNewContent}>

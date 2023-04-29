@@ -89,6 +89,10 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 20px;
+      div{
+        cursor: pointer;
+        color: red;
+      }
     }
     .items {
       display: flex;
