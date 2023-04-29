@@ -1,6 +1,5 @@
 [
   {
-    "url": "blog-post-url",
     "title": "Blog post title",
     "article": "lorem ipsum dolor aset",
     "tags": ["news", "technology", "front end development"],
@@ -17,7 +16,6 @@
     ]
   },
   {
-    "url": "blog-post-url",
     "title": "Blog post title",
     "article": "lorem ipsum dolor aset",
     "tags": ["news", "technology", "front end development"],

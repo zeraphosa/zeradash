@@ -14,7 +14,7 @@
 
 ## Technologies
 
-- React js, Scss, Axios, react-router-dom, Redux, i18next
+- React js, Scss, Axios, react-router-dom, Redux, i18next, react-simple-wysiwyg
 - Node js, Express, MySql, Nodemon, Postman, Cors
 
 ## Color Reference
@@ -30,4 +30,3 @@
 | #ffffff | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) | text      |
 | #979AA2 | ![#979AA2](https://via.placeholder.com/10/979AA2?text=+) | text-2    |
 | #DA0037 | ![#DA0037](https://via.placeholder.com/10/DA0037?text=+) | red       |
-
