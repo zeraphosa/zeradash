@@ -32,12 +32,12 @@ export default function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
                 <Route path={`/projects/:${project}`} element={<ProjectDetails />} />
-                <Route path={`/projects/:${project}/newblogpost`} element={<AddBlog />} />
-                <Route path={`/projects/:${project}/newgallerypost`} element={<AddGallery />} />
-                <Route path={`/projects/:${project}/newproduct`} element={<AddProduct />} />
-                <Route path={`/projects/:${project}/newproject`} element={<AddProject />} />
-                <Route path={`/projects/:${project}/newreview`} element={<AddTestimonial />} />
-                <Route path={`/projects/:${project}/newcustom`} element={<AddCustom />} />
+                <Route path={`/projects/:${project}/newblogpost?/:id`} element={<AddBlog />} />
+                <Route path={`/projects/:${project}/newgallerypost?/:id`} element={<AddGallery />} />
+                <Route path={`/projects/:${project}/newproduct?/:id`} element={<AddProduct />} />
+                <Route path={`/projects/:${project}/newproject?/:id`} element={<AddProject />} />
+                <Route path={`/projects/:${project}/newreview?/:id`} element={<AddTestimonial />} />
+                <Route path={`/projects/:${project}/newcustom?/:id`} element={<AddCustom />} />
                 <Route path="/notes" element={<Notes />} />
               </Routes>
               {createproject && <CreateProjectModal />}

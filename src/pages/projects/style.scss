@@ -54,7 +54,7 @@
   width: 100%;
   height: auto;
   background-color: inherit;
-  p{
+  p {
     font-size: 30px;
     letter-spacing: 2px;
     text-align: center;
@@ -81,7 +81,6 @@
     }
   }
   .content-create {
-
     .header {
       height: 50px;
       border-radius: 5px;
@@ -116,15 +115,17 @@
           align-items: center;
           gap: 15px;
         }
+        .inner-content{
+          border: none;
+        }
       }
     }
   }
 }
 @media (max-width: 500px) {
-  .content-create{
-    .items{
+  .content-create {
+    .items {
       justify-content: center;
     }
   }
-  
 }
