@@ -1,7 +1,7 @@
-import "./style.css";
 import useTheme from "../../hooks/useTheme";
 import { Icon } from "../../components/Icons";
 import { useState } from "react";
+import "./style.scss";
 
 export default function Notes() {
   const [theme] = useTheme();

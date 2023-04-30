@@ -30,3 +30,5 @@
 | #ffffff | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) | text      |
 | #979AA2 | ![#979AA2](https://via.placeholder.com/10/979AA2?text=+) | text-2    |
 | #DA0037 | ![#DA0037](https://via.placeholder.com/10/DA0037?text=+) | red       |
+| #007bff | ![#007bff](https://via.placeholder.com/10/007bff?text=+) | buttons   |
+| #454545 | ![#454545](https://via.placeholder.com/10/454545?text=+) | hover-new |
