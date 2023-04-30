@@ -6,31 +6,76 @@
   gap: 20px;
   .save {
     width: 100%;
-    height: 40px;
-    border: 1px solid green;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      border: none;
+      padding: 7px 25px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      background-color: #007bff;
+      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+    }
   }
   .header-container {
     width: 100%;
-    height: auto;
+    height: 150px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     .inputs {
       width: 55%;
-      height: 130px;
+      height: 100%;
       border-radius: 5px;
       padding: 15px;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       label {
         display: flex;
         align-items: center;
         gap: 10px;
       }
+      .tag-input {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        background-color: #454545;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        button {
+          height: 30px;
+          border: none;
+          display: flex;
+          align-items: center;
+          background-color: #f1f3f6;
+          gap: 10px;
+          padding: 5px 7px;
+          border-radius: 5px;
+          color: #000;
+        }
+        input {
+          height: 30px;
+          outline: none;
+          border: none;
+          border-radius: 3px;
+          color: #fff;
+        }
+      }
     }
     .info {
       width: 40%;
-      height: 130px;
+      height: 100%;
       border-radius: 5px;
       padding: 15px;
       box-sizing: border-box;
@@ -42,19 +87,3 @@
     margin-bottom: 40px;
   }
 }
-
-// .tags{
-//     width: 100%;
-//     display: flex;
-//     flex-wrap: wrap;
-//     align-items: center;
-//     gap: 20px;
-//     button{
-//         border: none;
-//         display: flex;
-//         align-items: center;
-//         gap: 10px;
-//         padding: 5px 7px;
-//         border-radius: 5px;
-//     }
-// }

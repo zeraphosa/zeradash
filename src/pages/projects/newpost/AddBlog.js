@@ -12,13 +12,17 @@ export default function AddBlog() {
     <div className="post">
       <div className="header-container">
         <div className={`inputs ${theme}`}>
-          <label>
-            Title:
-            <input type="text" placeholder="type title for new post" />
-          </label>
-          <div>
-            <input type="text" placeholder="add new tag" />
-            <button>Add</button>
+          <input type="text" placeholder="Type new title" />
+          <div className={`tag-input ${theme}`}>
+            <button>
+              <p>technology</p>
+              <Icon name="close" size={15} />
+            </button>
+            <button>
+              <p>technology</p>
+              <Icon name="close" size={15} />
+            </button>
+            <input type="text" placeholder="type new tag" />
           </div>
           <label>
             Add comment section
