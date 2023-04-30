@@ -1,25 +1,24 @@
-.post{
+.post {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .header-container {
     width: 100%;
-    height: 80vh;
-    border: 1px solid red;
+    height: 200px;
+    border: 1px solid blue;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    .header-container{
-        width: 100%;
-        height: 20vh;
-        border: 1px solid blue;
-        display: flex;
-        justify-content: space-between;
-    }
-    .article{
-        width: 100%;
-        height: 55vh;
-        border: 1px solid orange;
-    }
-    .save{
-        width: 100%;
-        height: 5vh;
-        border: 1px solid green;
-    }
+    justify-content: space-between;
+  }
+  .article {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 40px;
+  }
+  .save {
+    width: 100%;
+    height: 40px;
+    border: 1px solid green;
+  }
 }
