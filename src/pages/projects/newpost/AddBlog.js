@@ -30,9 +30,18 @@ export default function AddBlog() {
           </label>
         </div>
         <div className={`info ${theme}`}>
-          <div>Comments</div>
-          <div>Views</div>
-          <div>Likes</div>
+          <div className="info-item">
+            <p>4</p>
+            <span>comments</span>
+          </div>
+          <div className="info-item">
+            <p>1459</p>
+            <span>views</span>
+          </div>
+          <div className="info-item">
+            <p>32</p>
+            <span>likes</span>
+          </div>
         </div>
       </div>
 
