@@ -6,9 +6,21 @@
   gap: 20px;
   .save {
     width: 100%;
-    height: auto;
+    height: 40px;
     display: flex;
     justify-content: flex-end;
+    .info-mob{
+        display: none;
+        gap: 20px;
+        .info-mob-item{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            p{
+                font-weight: bold;
+            }
+        }
+    }
     button {
       border: none;
       padding: 7px 25px;
@@ -115,9 +127,31 @@
 }
 
 @media (max-width: 1300px) {
-  .header-container {
-    height: 400px;
-    border: 1px solid red;
-    
+  .post {
+    .header-container {
+      border: 1px solid green;
+      height: auto;
+      .inputs {
+        width: 65%;
+      }
+      .info {
+        display: none;
+      }
+    }
+    .save{
+        justify-content: space-between;
+        .info-mob{
+            display: flex;
+        }
+    }
   }
+}
+@media (max-width: 768px){
+    .post{
+        .header-container{
+            .inputs{
+                width: 100%;
+            }
+        }
+    }
 }

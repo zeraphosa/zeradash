@@ -1,8 +1,8 @@
-import "./style.scss";
 import { useQuill } from "react-quilljs";
 import { Icon } from "../../../components/Icons";
 import useTheme from "../../../hooks/useTheme";
 import "quill/dist/quill.snow.css";
+import "./style.scss";
 
 export default function AddBlog() {
   const { quillRef } = useQuill();
@@ -49,6 +49,20 @@ export default function AddBlog() {
         <div ref={quillRef}></div>
       </div>
       <div className="save">
+        <div className="info-mob">
+          <div className="info-mob-item">
+            <span>comments:</span>
+            <p>4</p>
+          </div>
+          <div className="info-mob-item">
+            <span>views:</span>
+            <p>1459</p>
+          </div>
+          <div className="info-mob-item">
+            <span>likes:</span>
+            <p>32</p>
+          </div>
+        </div>
         <button>Save</button>
       </div>
     </div>
