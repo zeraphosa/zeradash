@@ -3,10 +3,23 @@ import { Icon } from "../../../components/Icons";
 import useTheme from "../../../hooks/useTheme";
 import "quill/dist/quill.snow.css";
 import "./style.scss";
+import { useState } from "react";
 
 export default function AddBlog() {
   const { quillRef } = useQuill();
   const [theme] = useTheme();
+  const [tag, setTag] = useState(["technology", "space"]);
+  const [newTag, setNewTag] = useState("");
+
+  function tagChangeHandle(e) {
+    setNewTag(e.target.value);
+    window.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13 || e.keyCode === 32) {
+        setTag([...tag, newTag]);
+        setNewTag("");
+      }
+    });
+  }
 
   return (
     <div className="post">
@@ -14,21 +27,20 @@ export default function AddBlog() {
         <div className={`inputs ${theme}`}>
           <input type="text" placeholder="Type new title" />
           <div className={`tag-input ${theme}`}>
-            <button>
-              <p>technology</p>
-              <Icon name="close" size={15} />
-            </button>
-            <button>
-              <p>technology</p>
-              <Icon name="close" size={15} />
-            </button>
-            <input type="text" placeholder="type new tag" />
+            {tag.map((item, id) => (
+              <button key={id}>
+                <p>{item}</p>
+                <Icon name="close" size={15} />
+              </button>
+            ))}
+            <input type="text" placeholder="type new tag" value={newTag} onChange={(e) => tagChangeHandle(e)} />
           </div>
           <label>
             Add comment section
             <input type="checkbox" />
           </label>
         </div>
+
         <div className={`info ${theme}`}>
           <div className="info-item">
             <p>4</p>
@@ -68,12 +80,3 @@ export default function AddBlog() {
     </div>
   );
 }
-
-// <div className="tags">
-// <button className={`${theme}`}>
-//   technology <Icon name="close" size={15} />
-// </button>
-// <button className={`${theme}`}>
-//   space <Icon name="close" size={15} />
-// </button>
-// </div>
