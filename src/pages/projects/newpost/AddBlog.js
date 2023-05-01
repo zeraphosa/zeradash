@@ -8,26 +8,24 @@ import { useRef, useState } from "react";
 export default function AddBlog() {
   const { quillRef } = useQuill();
   const [theme] = useTheme();
-  const [tag, setTag] = useState(["technology", "space"]);
+  const [tag, setTag] = useState([]);
   const [newTag, setNewTag] = useState("");
   const buttonRef = useRef(null);
 
-  function tagChangeHandle(e) {
-    setNewTag(e.target.value);
-    // window.addEventListener("keydown", (e) => {
-    //   if (e.keyCode === 32) {
-    //   }
-    // });
-  }
   function handleKeyDown(e) {
     if (e.keyCode === 13 || e.keyCode === 32) {
       e.preventDefault();
       buttonRef.current.click();
     }
   }
-  function handleAddClick() {
+
+  function handleAddTag() {
     setTag([...tag, newTag]);
     setNewTag("");
+  }
+
+  function handleDeleteTag(item) {
+    setTag(tag.filter((i) => i !== item));
   }
 
   return (
@@ -39,11 +37,13 @@ export default function AddBlog() {
             {tag.map((item, id) => (
               <button key={id}>
                 <p>{item}</p>
-                <Icon name="close" size={15} />
+                <span onClick={() => handleDeleteTag(item)}>
+                  <Icon name="close" size={15} />
+                </span>
               </button>
             ))}
-            <input type="text" placeholder="type new tag" value={newTag} onChange={(e) => tagChangeHandle(e)} onKeyDown={handleKeyDown} />
-            <button className="buttonref" ref={buttonRef} onClick={handleAddClick}></button>
+            <input type="text" placeholder="type new tag" value={newTag} onChange={(e) => setNewTag(e.target.value)} onKeyDown={handleKeyDown} />
+            <button className="buttonref" ref={buttonRef} onClick={handleAddTag}></button>
           </div>
           <label>
             Add comment section
