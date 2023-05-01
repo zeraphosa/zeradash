@@ -3,22 +3,31 @@ import { Icon } from "../../../components/Icons";
 import useTheme from "../../../hooks/useTheme";
 import "quill/dist/quill.snow.css";
 import "./style.scss";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function AddBlog() {
   const { quillRef } = useQuill();
   const [theme] = useTheme();
   const [tag, setTag] = useState(["technology", "space"]);
   const [newTag, setNewTag] = useState("");
+  const buttonRef = useRef(null);
 
   function tagChangeHandle(e) {
     setNewTag(e.target.value);
-    window.addEventListener("keydown", (e) => {
-      if (e.keyCode === 13 || e.keyCode === 32) {
-        setTag([...tag, newTag]);
-        setNewTag("");
-      }
-    });
+    // window.addEventListener("keydown", (e) => {
+    //   if (e.keyCode === 32) {
+    //   }
+    // });
+  }
+  function handleKeyDown(e) {
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault();
+      buttonRef.current.click();
+    }
+  }
+  function handleAddClick() {
+    setTag([...tag, newTag]);
+    setNewTag("");
   }
 
   return (
@@ -33,7 +42,8 @@ export default function AddBlog() {
                 <Icon name="close" size={15} />
               </button>
             ))}
-            <input type="text" placeholder="type new tag" value={newTag} onChange={(e) => tagChangeHandle(e)} />
+            <input type="text" placeholder="type new tag" value={newTag} onChange={(e) => tagChangeHandle(e)} onKeyDown={handleKeyDown} />
+            <button className="buttonref" ref={buttonRef} onClick={handleAddClick}></button>
           </div>
           <label>
             Add comment section
