@@ -11,6 +11,7 @@ export default function AddBlog() {
   const [tag, setTag] = useState([]);
   const [newTag, setNewTag] = useState("");
   const buttonRef = useRef(null);
+  const inputRef = useRef(null);
 
   function handleKeyDown(e) {
     if (e.keyCode === 13 || e.keyCode === 32) {
@@ -24,25 +25,21 @@ export default function AddBlog() {
     setNewTag("");
   }
 
-  function handleDeleteTag(item) {
-    setTag(tag.filter((i) => i !== item));
-  }
-
   return (
     <div className="post">
       <div className="header-container">
         <div className={`inputs ${theme}`}>
           <input type="text" placeholder="Type new title" />
-          <div className={`tag-input ${theme}`}>
-            {tag.map((item, id) => (
+          <div className={`tag-input ${theme}`} onClick={() => inputRef.current.focus()}>
+            {tag?.map((item, id) => (
               <button key={id}>
                 <p>{item}</p>
-                <span onClick={() => handleDeleteTag(item)}>
+                <span onClick={() => setTag(tag.filter((i) => i !== item))}>
                   <Icon name="close" size={15} />
                 </span>
               </button>
             ))}
-            <input type="text" placeholder="type new tag" value={newTag} onChange={(e) => setNewTag(e.target.value)} onKeyDown={handleKeyDown} />
+            <input ref={inputRef} type="text" placeholder="Type new tag" value={newTag} onChange={(e) => setNewTag(e.target.value)} onKeyDown={handleKeyDown} />
             <button className="buttonref" ref={buttonRef} onClick={handleAddTag}></button>
           </div>
           <label>
