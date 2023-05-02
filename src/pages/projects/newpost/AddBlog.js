@@ -1,9 +1,9 @@
+import { useRef, useState } from "react";
 import { useQuill } from "react-quilljs";
 import { Icon } from "../../../components/Icons";
 import useTheme from "../../../hooks/useTheme";
 import "quill/dist/quill.snow.css";
 import "./style.scss";
-import { useRef, useState } from "react";
 
 export default function AddBlog() {
   const { quillRef } = useQuill();
@@ -39,12 +39,13 @@ export default function AddBlog() {
                 </span>
               </button>
             ))}
-            <input ref={inputRef} type="text" placeholder="Type new tag" value={newTag} onChange={(e) => setNewTag(e.target.value)} onKeyDown={handleKeyDown} />
+            <input type="text" placeholder="Type new tag" ref={inputRef} value={newTag} onChange={(e) => setNewTag(e.target.value)} onKeyDown={handleKeyDown} />
             <button className="buttonref" ref={buttonRef} onClick={handleAddTag}></button>
           </div>
           <label>
             Add comment section
             <input type="checkbox" />
+            <span className="checkmark"></span>
           </label>
         </div>
 

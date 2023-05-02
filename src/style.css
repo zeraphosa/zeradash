@@ -86,9 +86,28 @@ input {
   padding: 12px 15px;
   color: #fff;
 }
-input::placeholder{
+input::placeholder {
   color: #fff;
 }
+input[type="checkbox"] + .checkmark {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #454545;
+  border-radius: 2px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + .checkmark:after {
+  position: relative;
+  top: -4px;
+  left: 0px;
+  content: "\2714";
+  font-size: 14px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     display: none;

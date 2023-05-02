@@ -23,6 +23,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        cursor: pointer;
       }
       .tag-input {
         width: 100%;
@@ -67,6 +68,7 @@
           border: none;
           border-radius: 3px;
           color: #fff;
+          padding: 12px 8px;
         }
       }
     }
