@@ -25,32 +25,30 @@ export default function AddBlog() {
     setTag([...tag, newTag]);
     setNewTag("");
   }
-  const [dataTitle, setDataTitle] = useState("");
-  const [dataArticle, setDataArticle] = useState("");
-  const [dataTags, setDataTags] = useState([]);
-  const [dataComments, setDataComments] = useState({});
+
+  const [newData, setNewData] = useState([]);
 
   useEffect(() => {
     const urlpath = window.location.pathname;
     const urlhelper = urlpath.slice(urlpath.indexOf("newblogpost/"));
     const urlBlog = urlhelper.slice(urlhelper.indexOf("/") + 1);
 
-    const post = blogData.filter((item) => item.id === urlBlog);
-    console.log(post)
-    post.map((item) => {
-      setDataArticle(item.article);
-      setDataTitle(item.title);
-      setDataTags(item.tags);
-      setDataComments(item.comments);
+    blogData.map((item) => {
+      if (item.id === parseInt(urlBlog)) {
+        console.log(item);
+      } else {
+        return null;
+      }
     });
   }, []);
+
   function dosomething() {}
 
   return (
     <div className="post">
       <div className="header-container">
         <div className={`inputs ${theme}`}>
-          <input type="text" placeholder="Type new title" value={dataTitle} onChange={dosomething} />
+          <input type="text" placeholder="Type new title" onChange={dosomething} />
           <div className={`tag-input ${theme}`} onClick={() => inputRef.current.focus()}>
             {tag?.map((item, id) => (
               <button key={id}>
