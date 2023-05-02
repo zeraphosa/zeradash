@@ -56,8 +56,8 @@ export default function Sections({ name, project, defaultSections, setDefaultSec
 }
 
 function BlogData(theme, navigate, project) {
-  return blogdata?.map((item, id) => (
-    <div key={id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newblogpost/${id}`)}>
+  return blogdata?.map((item) => (
+    <div key={item.id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newblogpost/${item.id}`)}>
       <div className="card-inner inner-content">
         <div>{item.image}</div>
         <div>{item.title}</div>

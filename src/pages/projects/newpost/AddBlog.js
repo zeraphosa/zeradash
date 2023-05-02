@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuill } from "react-quilljs";
 import { Icon } from "../../../components/Icons";
 import useTheme from "../../../hooks/useTheme";
 import "quill/dist/quill.snow.css";
 import "./style.scss";
+import blogData from "../../../utils/cms/blog.json";
 
 export default function AddBlog() {
   const { quillRef } = useQuill();
@@ -24,12 +25,32 @@ export default function AddBlog() {
     setTag([...tag, newTag]);
     setNewTag("");
   }
+  const [dataTitle, setDataTitle] = useState("");
+  const [dataArticle, setDataArticle] = useState("");
+  const [dataTags, setDataTags] = useState([]);
+  const [dataComments, setDataComments] = useState({});
+
+  useEffect(() => {
+    const urlpath = window.location.pathname;
+    const urlhelper = urlpath.slice(urlpath.indexOf("newblogpost/"));
+    const urlBlog = urlhelper.slice(urlhelper.indexOf("/") + 1);
+
+    const post = blogData.filter((item) => item.id === urlBlog);
+    console.log(post)
+    post.map((item) => {
+      setDataArticle(item.article);
+      setDataTitle(item.title);
+      setDataTags(item.tags);
+      setDataComments(item.comments);
+    });
+  }, []);
+  function dosomething() {}
 
   return (
     <div className="post">
       <div className="header-container">
         <div className={`inputs ${theme}`}>
-          <input type="text" placeholder="Type new title" />
+          <input type="text" placeholder="Type new title" value={dataTitle} onChange={dosomething} />
           <div className={`tag-input ${theme}`} onClick={() => inputRef.current.focus()}>
             {tag?.map((item, id) => (
               <button key={id}>
