@@ -68,7 +68,7 @@ export default function AddBlog() {
           </div>
           <label>
             Add comment section
-            <input type="checkbox" checked={commentStatus} />
+            <input type="checkbox" checked={commentStatus} onChange={() => setCommentStatus(!commentStatus)} />
             <span className="checkmark"></span>
           </label>
         </div>
@@ -93,19 +93,24 @@ export default function AddBlog() {
         <div ref={quillRef}>{dataArticle}</div>
       </div>
 
-      {commentStatus && (
-        <div className="comments">
-          {comment.map((item, id) => (
-            <div key={id} className={`comment-item ${theme}`}>
-              <div className="comment-content">
-                <div>{item.name}</div>
-                <div>{item.text}</div>
+      {commentStatus &&
+        (comment.length === 0 ? (
+          <div className={`comment-null ${theme}`}>Comments will show here</div>
+        ) : (
+          <div className="comments">
+            {comment?.map((item, id) => (
+              <div key={id} className={`comment-item ${theme}`}>
+                <div className="comment-content">
+                  <div>{item.name}</div>
+                  <div>{item.text}</div>
+                </div>
+                <div className="comment-btn">
+                  <Icon name="delete" size={25} />
+                </div>
               </div>
-              <div className="comment-btn"><Icon name="delete" size={25}/></div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        ))}
 
       <div className="save">
         <div className="info-mob">
@@ -132,26 +137,6 @@ const comment = [
   {
     name: "Jhon doe",
     text: " ametlorem ametlorem ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
   },
   {
     name: "Jhon doe",
