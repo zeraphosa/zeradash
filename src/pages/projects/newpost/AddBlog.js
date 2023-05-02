@@ -16,6 +16,7 @@ export default function AddBlog() {
   const [dataArticle, setDataArticle] = useState("");
   const [dataComments, setDataComments] = useState({});
   const [dataTags, setDataTags] = useState([]);
+  const [commentStatus, setCommentStatus] = useState(true);
   console.log(dataComments);
 
   function handleKeyDown(e) {
@@ -67,7 +68,7 @@ export default function AddBlog() {
           </div>
           <label>
             Add comment section
-            <input type="checkbox" />
+            <input type="checkbox" checked={commentStatus} />
             <span className="checkmark"></span>
           </label>
         </div>
@@ -91,6 +92,21 @@ export default function AddBlog() {
       <div className="article">
         <div ref={quillRef}>{dataArticle}</div>
       </div>
+
+      {commentStatus && (
+        <div className="comments">
+          {comment.map((item, id) => (
+            <div key={id} className={`comment-item ${theme}`}>
+              <div className="comment-content">
+                <div>{item.name}</div>
+                <div>{item.text}</div>
+              </div>
+              <div className="comment-btn"><Icon name="delete" size={25}/></div>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="save">
         <div className="info-mob">
           <div className="info-mob-item">
@@ -111,3 +127,42 @@ export default function AddBlog() {
     </div>
   );
 }
+
+const comment = [
+  {
+    name: "Jhon doe",
+    text: " ametlorem ametlorem ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+  {
+    name: "Jhon doe",
+    text: "lorem ipsum dolor amet",
+  },
+];
