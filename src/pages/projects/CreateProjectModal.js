@@ -32,7 +32,7 @@ export default function CreateProjectModal() {
         </div>
         <div className="modal-content">
           <input type="text" placeholder="Project name" value={projectName} onChange={(e) => setProjectName(e.target.value)} />
-          <button onClick={addNewProject}>Add Project</button>
+          <button onClick={addNewProject}>Add</button>
         </div>
       </div>
     </>
