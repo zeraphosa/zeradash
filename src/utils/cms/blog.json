@@ -7,10 +7,12 @@
     "image": "src:////0",
     "comments": [
       {
+        "id": 0,
         "user": "Jack london",
         "comment": "This post is amazing"
       },
       {
+        "id": 1,
         "user": "Example name",
         "comment": "Example text for comment section"
       }
@@ -24,12 +26,33 @@
     "image": "src:////",
     "comments": [
       {
+        "id": 0,
         "user": "Jack london",
         "comment": "This post is amazing"
       },
       {
+        "id": 1,
         "user": "Example name",
         "comment": "Example text for comment section"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "3 ərzaqla un qurabiyəsi",
+    "article": "Hazırlanması: Sobanı 170 dərəcədə isitməyə başlayın. Kərə yağını otaq temperaturunda bir müddət gözlədin. Ardınca bir qarışdırma qabı götürün və içinə əvvəlcə kərə yağını qoyun. Kərə yağının üzərinə isə şəkər pudrası əlavə edin. Bu ikisini krem forması alana qədər qarışdırın. Unu ələyin və az-az kərə yağı ilə qarışdırın. Xəmir yaxşıca qarışandan sonra yumru toplar halına gətirin. Soba tavasına yağlı kağız sərin və üzərinə topları yerləşdirin. Əvvəlcədən qızdırdığınız sobada 15-20 dəqiqə bişirin. Rəng almağa başlayanda sobadan götürüb, üzərinə şəkər pudrası əlavə edə bilərsiniz. Nuş olsun!",
+    "tags": ["sirniyat", "qurabiye", "3 erzaq"],
+    "image": "src:////",
+    "comments": [
+      {
+        "id": 0,
+        "user": "User 1",
+        "comment": "Yoxladim, cox dadli alindi. Tesekkurler <3"
+      },
+      {
+        "id": 1,
+        "user": "Lamiye",
+        "comment": "Ela reseptdi mutleq yoxlayin"
       }
     ]
   }
