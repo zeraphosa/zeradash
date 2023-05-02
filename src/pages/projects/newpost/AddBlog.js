@@ -17,6 +17,28 @@ export default function AddBlog() {
   const [dataComments, setDataComments] = useState({});
   const [dataTags, setDataTags] = useState([]);
   const [commentStatus, setCommentStatus] = useState(true);
+  const [comments, setComments] = useState([
+    {
+      id: 1,
+      name: "Jhon doe",
+      text: " ametlorem ametlorem ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem ipsum dolor amet",
+    },
+    {
+      id: 2,
+      name: "Jhon doe",
+      text: "lorem ipsum dolor amet",
+    },
+    {
+      id: 3,
+      name: "Jhon doe",
+      text: "lorem ipsum dolor amet",
+    },
+    {
+      id: 4,
+      name: "Jhon doe",
+      text: "lorem ipsum dolor amet",
+    },
+  ]);
   console.log(dataComments);
 
   function handleKeyDown(e) {
@@ -94,17 +116,17 @@ export default function AddBlog() {
       </div>
 
       {commentStatus &&
-        (comment.length === 0 ? (
+        (comments.length === 0 ? (
           <div className={`comment-null ${theme}`}>Comments will show here</div>
         ) : (
           <div className="comments">
-            {comment?.map((item, id) => (
-              <div key={id} className={`comment-item ${theme}`}>
+            {comments?.map((item) => (
+              <div key={item.id} className={`comment-item ${theme}`}>
                 <div className="comment-content">
                   <div>{item.name}</div>
                   <div>{item.text}</div>
                 </div>
-                <div className="comment-btn">
+                <div className="comment-btn" onClick={() => setComments(comments.filter((p) => p.id !== item.id))}>
                   <Icon name="delete" size={25} />
                 </div>
               </div>
@@ -132,22 +154,3 @@ export default function AddBlog() {
     </div>
   );
 }
-
-const comment = [
-  {
-    name: "Jhon doe",
-    text: " ametlorem ametlorem ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem em ipsum dolor ametlorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-  {
-    name: "Jhon doe",
-    text: "lorem ipsum dolor amet",
-  },
-];
