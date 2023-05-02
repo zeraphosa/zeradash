@@ -1,6 +1,6 @@
 ## Admin panel
 
-[www.admin.zaursharifov.com](https://admin.zaursharifov.com)\
+[www.zeradash.zaursharifov.com](https://zeradash.zaursharifov.com)
 
 ## Launc application
 

@@ -7,7 +7,7 @@ import "./style.scss";
 import blogData from "../../../utils/cms/blog.json";
 
 export default function AddBlog() {
-  const { quillRef } = useQuill();
+  const { quill, quillRef } = useQuill();
   const [theme] = useTheme();
   const [newTag, setNewTag] = useState("");
   const buttonRef = useRef(null);
@@ -16,6 +16,7 @@ export default function AddBlog() {
   const [dataArticle, setDataArticle] = useState("");
   const [dataComments, setDataComments] = useState([]);
   const [dataTags, setDataTags] = useState([]);
+  const [articleInput, setArticleInput] = useState("");
 
   function handleKeyDown(e) {
     if (e.keyCode === 13 || e.keyCode === 32) {
@@ -27,6 +28,13 @@ export default function AddBlog() {
   function handleAddTag() {
     setDataTags([...dataTags, newTag]);
     setNewTag("");
+  }
+
+  function handleSave() {
+    // send to db
+    // setDataArticle(articleInput);
+    console.log("dataTitle:", dataTitle);
+    console.log("dataArticle:", articleInput);
   }
 
   useEffect(() => {
@@ -43,15 +51,19 @@ export default function AddBlog() {
       }
       return null;
     });
-  }, []);
-
-  function dosomething() {}
+    if (quill) {
+      quill.on("text-change", () => {
+        const text = quill.getText();
+        setArticleInput(text);
+      });
+    }
+  }, [quill]);
 
   return (
     <div className="post">
       <div className="header-container">
         <div className={`inputs ${theme}`}>
-          <input type="text" placeholder="Type new title" defaultValue={dataTitle} onChange={dosomething} />
+          <input type="text" placeholder="Type new title" defaultValue={dataTitle} onChange={(e) => setDataTitle(e.target.value)} />
           <div className={`tag-input ${theme}`} onClick={() => inputRef.current.focus()}>
             {dataTags?.map((item, id) => (
               <button key={id}>
@@ -119,7 +131,7 @@ export default function AddBlog() {
             <p>32</p>
           </div>
         </div>
-        <button>Save</button>
+        <button onClick={handleSave}>Save</button>
       </div>
     </div>
   );
