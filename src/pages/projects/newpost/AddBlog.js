@@ -9,10 +9,14 @@ import blogData from "../../../utils/cms/blog.json";
 export default function AddBlog() {
   const { quillRef } = useQuill();
   const [theme] = useTheme();
-  const [tag, setTag] = useState([]);
   const [newTag, setNewTag] = useState("");
   const buttonRef = useRef(null);
   const inputRef = useRef(null);
+  const [dataTitle, setDataTitle] = useState("");
+  const [dataArticle, setDataArticle] = useState("");
+  const [dataComments, setDataComments] = useState({});
+  const [dataTags, setDataTags] = useState([]);
+  console.log(dataComments);
 
   function handleKeyDown(e) {
     if (e.keyCode === 13 || e.keyCode === 32) {
@@ -22,23 +26,23 @@ export default function AddBlog() {
   }
 
   function handleAddTag() {
-    setTag([...tag, newTag]);
+    setDataTags([...dataTags, newTag]);
     setNewTag("");
   }
-
-  const [newData, setNewData] = useState([]);
 
   useEffect(() => {
     const urlpath = window.location.pathname;
     const urlhelper = urlpath.slice(urlpath.indexOf("newblogpost/"));
     const urlBlog = urlhelper.slice(urlhelper.indexOf("/") + 1);
 
-    blogData.map((item) => {
+    blogData?.map((item) => {
       if (item.id === parseInt(urlBlog)) {
-        console.log(item);
-      } else {
-        return null;
+        setDataTitle(item.title);
+        setDataArticle(item.article);
+        setDataComments(item.comments);
+        setDataTags(item.tags);
       }
+      return null;
     });
   }, []);
 
@@ -48,12 +52,12 @@ export default function AddBlog() {
     <div className="post">
       <div className="header-container">
         <div className={`inputs ${theme}`}>
-          <input type="text" placeholder="Type new title" onChange={dosomething} />
+          <input type="text" placeholder="Type new title" defaultValue={dataTitle} onChange={dosomething} />
           <div className={`tag-input ${theme}`} onClick={() => inputRef.current.focus()}>
-            {tag?.map((item, id) => (
+            {dataTags?.map((item, id) => (
               <button key={id}>
                 <p>{item}</p>
-                <span onClick={() => setTag(tag.filter((i) => i !== item))}>
+                <span onClick={() => setDataTags(dataTags.filter((i) => i !== item))}>
                   <Icon name="close" size={15} />
                 </span>
               </button>
@@ -85,7 +89,7 @@ export default function AddBlog() {
       </div>
 
       <div className="article">
-        <div ref={quillRef}></div>
+        <div ref={quillRef}>{dataArticle}</div>
       </div>
       <div className="save">
         <div className="info-mob">
