@@ -12,7 +12,7 @@
     justify-content: space-between;
     .inputs {
       width: 55%;
-      height: 150px;
+      height: auto;
       border-radius: 5px;
       padding: 15px;
       box-sizing: border-box;
@@ -49,12 +49,19 @@
           span {
             height: 20px;
             width: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             border-radius: 50%;
             background-color: #454545;
             color: #fff;
+            position: relative;
+            div {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
           }
         }
         input {

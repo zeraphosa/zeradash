@@ -69,7 +69,9 @@ export default function AddBlog() {
               <button key={id}>
                 <p>{item}</p>
                 <span onClick={() => setDataTags(dataTags.filter((i) => i !== item))}>
-                  <Icon name="close" size={15} />
+                  <div>
+                    <Icon name="close" size={15} />
+                  </div>
                 </span>
               </button>
             ))}
