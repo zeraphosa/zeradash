@@ -7,13 +7,28 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="header">
-        <div className={`sales ${theme}`}>sales</div>
-        <div className={`products ${theme}`}>products</div>
-        <div className={`projects ${theme}`}>projects</div>
+        <div className={`income ${theme}`}>
+          <div className="info">
+            <div className="count">4432 $</div>
+            <div className="name">income</div>
+          </div>
+        </div>
+        <div className={`products ${theme}`}>
+          <div className="info">
+            <div className="count">2347</div>
+            <div className="name">products</div>
+          </div>
+        </div>
+        <div className={`projects ${theme}`}>
+          <div className="info">
+            <div className="count">1</div>
+            <div className="name">projects</div>
+          </div>
+        </div>
         <div className={`tasks ${theme}`}>
-          <div>
-            <span>143</span>
-            <p>tasks</p>
+          <div className="info">
+            <div className="count">143</div>
+            <div className="name">tasks</div>
           </div>
         </div>
       </div>

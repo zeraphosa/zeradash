@@ -1,27 +1,63 @@
-.dashboard{
+.dashboard {
+  width: 100%;
+  height: auto;
+  .header {
     width: 100%;
-    height: auto;
-    .header{
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    .income,
+    .products,
+    .projects,
+    .tasks {
+      width: 25%;
+      height: 150px;
+      border-radius: 5px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .info {
         width: 100%;
-        min-height: 150px;
+        height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 20px;
-        .sales,.products,.projects,.tasks{
-            width: 25%;
-            height: 150px;
-            border-radius: 5px;
-            padding: 15px;
-            box-sizing: border-box;
-            font-size: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid red;
+        justify-content: center;
+        gap: 5px;
+        .count {
+          font-size: 50px;
+          font-weight: 700;
         }
+        .name {
+          font-size: 16px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
     }
-    .graphics{
-        margin-top: 20px;
+  }
+  .graphics {
+    margin-top: 20px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .dashboard {
+    .header {
+      flex-direction: column;
+      .income,
+      .products,
+      .projects,
+      .tasks {
+        width: 100%;
+      }
     }
+  }
 }

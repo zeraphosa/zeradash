@@ -35,3 +35,4 @@
 
 - task page
 - documents page for departments
+- projects - custom section, faq section
