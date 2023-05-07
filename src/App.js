@@ -15,6 +15,7 @@ import AddProject from "./pages/projects/newpost/AddProject";
 import AddTestimonial from "./pages/projects/newpost/AddTestimonial";
 import SignIn from "./pages/login/SignIn";
 import "./style.css";
+import SignUp from "./pages/login/SignUp";
 
 export default function App() {
   const sidebar = useSelector((state) => state.general.sidebar);
@@ -46,6 +47,7 @@ export default function App() {
                   <Route path={`/projects/:${project}/newproject?/:id`} element={<AddProject />} />
                   <Route path={`/projects/:${project}/newreview?/:id`} element={<AddTestimonial />} />
                   <Route path="/notes" element={<Notes />} />
+                  <Route path="/signup" element={<SignUp />} />
                 </Routes>
               ) : (
                 <SignIn isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
