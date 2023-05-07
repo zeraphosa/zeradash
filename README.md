@@ -14,7 +14,7 @@
 
 ## Technologies
 
-- React js, Scss, Axios, react-router-dom, Redux, i18next, react-quilljs
+- React js, Scss, Axios, react-router-dom, Redux, i18next, react-quilljs, react-chartjs-2
 - Node js, Express, MySql, Nodemon, Postman, Cors
 
 ## Color Reference
