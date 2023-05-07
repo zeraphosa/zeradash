@@ -59,9 +59,9 @@ function BlogData(theme, navigate, project) {
   return blogdata?.map((item) => (
     <div key={item.id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newblogpost/${item.id}`)}>
       <div className="card-inner inner-content">
-        <div>{item.image}</div>
+        <img src={item.image} alt={item.id} />
         <div>{item.title}</div>
-        <div>{item.tags}</div>
+        <span>{item.category}</span>
       </div>
     </div>
   ));
@@ -69,6 +69,9 @@ function BlogData(theme, navigate, project) {
 function ProjectData(theme, navigate, project) {
   return projectdata?.map((item, id) => (
     <div key={id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newproject/${id}`)}>
+      <span className="delete-btn">
+        <Icon name="delete" size={20} />
+      </span>
       <div className="card-inner inner-content">
         <div>{item.image}</div>
         <div>{item.title}</div>
@@ -80,6 +83,9 @@ function ProjectData(theme, navigate, project) {
 function GalleryData(theme, navigate, project) {
   return gallerydata?.map((item, id) => (
     <div key={id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newproject/${id}`)}>
+      <span className="delete-btn">
+        <Icon name="delete" size={20} />
+      </span>
       <div className="card-inner inner-content">
         <div>{item.image}</div>
         <div>{item.title}</div>
@@ -91,6 +97,9 @@ function GalleryData(theme, navigate, project) {
 function ProductData(theme, navigate, project) {
   return productsdata?.map((item, id) => (
     <div key={id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newproject/${id}`)}>
+      <span className="delete-btn">
+        <Icon name="delete" size={20} />
+      </span>
       <div className="card-inner inner-content">
         <div>{item.image}</div>
         <div>{item.title}</div>
@@ -102,6 +111,9 @@ function ProductData(theme, navigate, project) {
 function TestimonialData(theme, navigate, project) {
   return testimonialsdata?.map((item, id) => (
     <div key={id} className={`create-card ${theme}`} onClick={() => navigate(`/projects/${project}/newproject/${id}`)}>
+      <span className="delete-btn">
+        <Icon name="delete" size={20} />
+      </span>
       <div className="card-inner inner-content">
         <div>{item.image}</div>
         <div>{item.title}</div>

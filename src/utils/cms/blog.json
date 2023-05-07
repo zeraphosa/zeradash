@@ -1,10 +1,11 @@
 [
   {
     "id": 0,
+    "category": "Technology",
     "title": "Spacele ilgili birseyler",
     "article": "lorem ipsum dolor asetlorem ipsum dolor asetlorem ",
     "tags": ["news", "space", "front end development"],
-    "image": "src:////0",
+    "image": "https://plus.unsplash.com/premium_photo-1669731124128-b4ff5cc94881?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     "comments": [
       {
         "id": 0,
@@ -20,10 +21,11 @@
   },
   {
     "id": 1,
+    "category": "Life style",
     "title": "Blog post title",
     "article": "lorem ipsum dolor aset",
     "tags": ["news", "technology", "front end development"],
-    "image": "src:////",
+    "image": "https://images.unsplash.com/photo-1682687981907-170c006e3744?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
     "comments": [
       {
         "id": 0,
@@ -39,10 +41,11 @@
   },
   {
     "id": 2,
+    "category": "Food & Baverage",
     "title": "3 ərzaqla un qurabiyəsi",
     "article": "Hazırlanması: Sobanı 170 dərəcədə isitməyə başlayın. Kərə yağını otaq temperaturunda bir müddət gözlədin. Ardınca bir qarışdırma qabı götürün və içinə əvvəlcə kərə yağını qoyun. Kərə yağının üzərinə isə şəkər pudrası əlavə edin. Bu ikisini krem forması alana qədər qarışdırın. Unu ələyin və az-az kərə yağı ilə qarışdırın. Xəmir yaxşıca qarışandan sonra yumru toplar halına gətirin. Soba tavasına yağlı kağız sərin və üzərinə topları yerləşdirin. Əvvəlcədən qızdırdığınız sobada 15-20 dəqiqə bişirin. Rəng almağa başlayanda sobadan götürüb, üzərinə şəkər pudrası əlavə edə bilərsiniz. Nuş olsun!",
     "tags": ["sirniyat", "qurabiye", "3 erzaq"],
-    "image": "src:////",
+    "image": "https://images.unsplash.com/photo-1683009427598-9c21a169f98f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
     "comments": [
       {
         "id": 0,
