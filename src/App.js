@@ -31,7 +31,7 @@ export default function App() {
     <BrowserRouter>
       <div className="app">
         <Sidebar />
-        <div className={`main ${sidebar && "main-mob"}`} style={sidebar ? { marginLeft: "240px" } : { marginLeft: "0px" }}>
+        <div className={`main ${sidebar && loginStatus && "main-mob"}`} style={sidebar ? { marginLeft: "240px" } : { marginLeft: "0px" }}>
           <Navbar />
           <div className="content">
             <div className="container">

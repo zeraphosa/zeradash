@@ -23,12 +23,14 @@ export default function SignIn({ isLoggedIn, setIsLoggedIn }) {
           <input type="password" placeholder="Password" />
           <div className="submit">
             <div>Forgot your password ?</div>
-            <button className="sign">Sign In</button>
+            <button className="sign" onClick={() => setIsLoggedIn(true)}>
+              Sign In
+            </button>
           </div>
         </div>
-        <p>OR</p>
         <div className="bottom">
-          <button className="sign">Sign Up</button>
+          <p>Don't have an account?</p>
+          <button className="sign">Sign Up Now</button>
         </div>
       </div>
     </div>
